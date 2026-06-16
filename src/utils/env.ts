@@ -6,7 +6,15 @@ function getEnv(key: string, fallback: string): string {
   }
 }
 
+function normalizeFormspreeUrl(value: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('https://formspree.io/f/')) return trimmed;
+  return `https://formspree.io/f/${trimmed}`;
+}
+
 export function getFormEndpoint(name: string, fallback: string): string {
-  const id = getEnv(`VITE_FORMSPREE_${name}`, '');
-  return id ? `https://formspree.io/f/${id}` : fallback;
+  const value = getEnv(`VITE_FORMSPREE_${name}`, '');
+  if (!value) return fallback;
+  return normalizeFormspreeUrl(value);
 }
