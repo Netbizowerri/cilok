@@ -1,0 +1,6 @@
+{
+  "name": "Cilok Paint",
+  "description": "Decorative wall coating products and application services in Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
