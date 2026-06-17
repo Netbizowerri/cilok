@@ -30,7 +30,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
     <PageWrapper>
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen md:min-h-screen bg-black overflow-hidden flex items-center pt-44 sm:pt-48 md:pt-52 pb-24 md:pb-28">
+      <section className="relative min-h-screen md:min-h-screen bg-black overflow-hidden flex items-center pt-28 sm:pt-32 md:pt-36 pb-16 md:pb-20">
         {/* Background Image Cover with All Three Paint Elements Visible */}
         <div className="absolute inset-0 z-0 bg-black overflow-hidden">
           <img 

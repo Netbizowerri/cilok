@@ -40,7 +40,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
             ? 'glass-nav bg-white/90 shadow-lg border-b border-brand-muted/20 py-2 md:py-3' 
-            : 'bg-transparent py-3.5 md:py-5'
+            : 'bg-transparent pt-8 md:pt-5 pb-3.5 md:pb-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
@@ -54,16 +54,11 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             <div className="bg-brand-primary p-1.5 md:p-2 rounded-lg text-black shadow-md group-hover:rotate-12 transition-transform duration-300">
               <Umbrella className="w-4 h-4 md:w-5 h-5" />
             </div>
-            <div className="flex flex-col">
-              <span className={`font-display font-black text-base md:text-2xl leading-none tracking-tighter ${
-                isScrolled ? 'text-white' : 'text-white'
-              }`}>
-                CILOK
-              </span>
-              <span className="text-[8px] md:text-[9px] font-mono uppercase tracking-[0.2em] text-brand-accent">
-                Synthesis Studio
-              </span>
-            </div>
+            <span className={`font-display font-black text-base md:text-2xl leading-none tracking-tighter ${
+              isScrolled ? 'text-white' : 'text-white'
+            }`}>
+              CILOK PAINTS
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
