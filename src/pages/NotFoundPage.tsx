@@ -1,10 +1,11 @@
 import React from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { SectionHeading, Button } from '../components/ui';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Umbrella, Home } from 'lucide-react';
 
 export function NotFoundPage() {
+  const navigate = useNavigate();
   return (
     <PageWrapper>
       <section className="min-h-screen bg-brand-dark flex flex-col items-center justify-center p-6 text-center text-white relative">
@@ -26,13 +27,13 @@ export function NotFoundPage() {
           <div className="pt-4 flex items-center justify-center gap-4">
             <Button 
               variant="accent" 
-              onClick={() => window.location.href = '/'}
+              onClick={() => navigate('/')}
             >
               <Home className="w-4 h-4 mr-2" /> Return to Home
             </Button>
             <Button 
               variant="secondary" 
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
               className="border-white text-white hover:bg-white hover:text-brand-dark"
             >
               Our Paint Products

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { projects } from '../data/paintData';
 import { PageWrapper } from '../components/layout/PageWrapper';
@@ -10,6 +11,7 @@ interface ProjectsProps {
 }
 
 export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<'All' | 'Commercial' | 'Residential' | 'Religious' | 'Government' | 'Hospitality'>('All');
   const [lightboxProject, setLightboxProject] = useState<typeof projects[0] | null>(null);
 
@@ -253,7 +255,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
               id="cta-projects-order"
               variant="accent" 
               size="lg"
-              onClick={() => window.location.href = '/products/order'}
+              onClick={() => navigate('/products/order')}
               className="w-full sm:w-auto font-bold"
             >
               Get a Coating Estimate

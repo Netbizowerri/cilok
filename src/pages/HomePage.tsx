@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, Sparkles, Shield, Compass, Landmark, Hotel, Building2, Paintbrush, 
@@ -14,6 +14,7 @@ interface HomeProps {
 }
 
 export function HomePage({ onOpenConsultation }: HomeProps) {
+  const navigate = useNavigate();
   // HERO KEYWORD CYCLE
   const keywords = ['Silk Finish', 'Emulsion', 'Texcoat', 'Wall Screeding', 'Pearl Effect'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -29,13 +30,13 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
     <PageWrapper>
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen bg-black overflow-hidden flex items-center pt-24 sm:pt-28 md:pt-32 pb-10 md:pb-16">
+      <section className="relative min-h-screen md:min-h-screen bg-black overflow-hidden flex items-center pt-44 sm:pt-48 md:pt-52 pb-24 md:pb-28">
         {/* Background Image Cover with All Three Paint Elements Visible */}
         <div className="absolute inset-0 z-0 bg-black overflow-hidden">
           <img 
-            src="https://i.ibb.co/k2yXg5sJ/Gemini-Generated-Image-2o63xb2o63xb2o63-1.png" 
+            src="https://i.ibb.co/j9XTWhxp/CILOK-14.jpg" 
             alt="Cilok Paint Premium Hero Background" 
-            className="w-full h-full object-contain md:object-contain object-center md:object-right opacity-95 animate-kenburns"
+            className="w-full h-full object-cover object-center opacity-95 animate-kenburns"
             referrerPolicy="no-referrer"
           />
           {/* Sophisticated artistic overlays to keep text readable on left while letting the full image shine on right */}
@@ -121,7 +122,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
               <Button 
                 variant="accent" 
                 size="md"
-                onClick={() => window.location.href = '/products'}
+                onClick={() => navigate('/products')}
                 className="w-full sm:w-auto text-xs md:text-sm font-extrabold px-6 py-3"
               >
                 Explore Paint Products
@@ -130,7 +131,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
               <Button 
                 variant="secondary" 
                 size="md"
-                onClick={() => window.location.href = '/services/book'}
+                onClick={() => navigate('/services/book')}
                 className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-dark text-xs md:text-sm px-6 py-3"
               >
                 Book site Service
@@ -245,7 +246,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
             <Button 
               variant="dark" 
               size="md"
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
             >
               View All Products & Finishes →
             </Button>
@@ -283,10 +284,10 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="primary" size="sm" onClick={() => window.location.href = '/services/wall-screeding'}>
+                  <Button variant="primary" size="sm" onClick={() => navigate('/services/wall-screeding')}>
                     Learn More Specs
                   </Button>
-                  <Button variant="secondary" size="sm" onClick={() => window.location.href = '/services/book'}>
+                  <Button variant="secondary" size="sm" onClick={() => navigate('/services/book')}>
                     Book Screeding Now
                   </Button>
                 </div>
@@ -332,10 +333,10 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="primary" size="sm" onClick={() => window.location.href = '/services/crackos-effect'}>
+                  <Button variant="primary" size="sm" onClick={() => navigate('/services/crackos-effect')}>
                     Explore Crackos Finish
                   </Button>
-                  <Button variant="secondary" size="sm" onClick={() => window.location.href = '/services/book'}>
+                  <Button variant="secondary" size="sm" onClick={() => navigate('/services/book')}>
                     Book Premium Finish
                   </Button>
                 </div>
@@ -480,7 +481,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
             <Button 
               variant="dark" 
               size="md"
-              onClick={() => window.location.href = '/projects'}
+              onClick={() => navigate('/projects')}
             >
               View Full Portfolio Archive →
             </Button>
@@ -550,7 +551,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
               id="cta-home-bottom-quote"
               variant="accent" 
               size="lg"
-              onClick={() => window.location.href = '/products/order'}
+              onClick={() => navigate('/products/order')}
               className="w-full sm:w-auto"
             >
               Request a Free Quote

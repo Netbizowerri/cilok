@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { products, services } from '../data/paintData';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Badge, Button, FAQAccordion, SectionHeading } from '../components/ui';
@@ -10,6 +10,7 @@ interface ProductDetailProps {
 }
 
 export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
+  const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const product = products.find(p => p.slug === slug);
 
@@ -103,7 +104,7 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
                   id={`btn-order-detail-${product.slug}`}
                   variant="primary" 
                   size="md"
-                  onClick={() => window.location.href = `/products/order?product=${product.slug}`}
+                  onClick={() => navigate(`/products/order?product=${product.slug}`)}
                 >
                   Order Formulation Now
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -215,7 +216,7 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
         </a>
         <Button 
           variant="primary" 
-          onClick={() => window.location.href = `/products/order?product=${product.slug}`}
+          onClick={() => navigate(`/products/order?product=${product.slug}`)}
           className="flex-1 text-center py-3 text-xs"
         >
           Order {product.name} Now →

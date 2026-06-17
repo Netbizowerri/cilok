@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { services } from '../data/paintData';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Badge, Button, SectionHeading } from '../components/ui';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Brush, Layers, Sparkles, PaintBucket, ZapOff, Crown, Hexagon, Grid, HelpCircle, Phone 
 } from 'lucide-react';
@@ -13,6 +13,7 @@ interface ServicesProps {
 }
 
 export function ServicesPage({ onOpenConsultation }: ServicesProps) {
+  const navigate = useNavigate();
 
   // Map string to Lucide React icons
   const getServiceIcon = (iconStr: string) => {
@@ -99,7 +100,7 @@ export function ServicesPage({ onOpenConsultation }: ServicesProps) {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      onClick={() => window.location.href = `/services/book?service=${serv.slug}`}
+                      onClick={() => navigate(`/services/book?service=${serv.slug}`)}
                       className="px-4 py-1.5 text-xs font-bold"
                     >
                       Book Service

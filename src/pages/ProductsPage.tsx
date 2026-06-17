@@ -4,13 +4,14 @@ import { products } from '../data/paintData';
 import { Badge, Button, SectionHeading } from '../components/ui';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Compass, HelpCircle, Phone, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface ProductsProps {
   onOpenConsultation: () => void;
 }
 
 export function ProductsPage({ onOpenConsultation }: ProductsProps) {
+  const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState<'All' | 'Paints' | 'Putty' | 'Specialty'>('All');
 
   // Filter products based on selectedTab
@@ -116,7 +117,7 @@ export function ProductsPage({ onOpenConsultation }: ProductsProps) {
                         <Button 
                           variant="ghost" 
                           size="sm" 
-                          onClick={() => window.location.href = `/products/order?product=${prod.slug}`}
+                          onClick={() => navigate(`/products/order?product=${prod.slug}`)}
                           className="px-4 py-1.5 text-xs font-bold"
                         >
                           Order Paint →

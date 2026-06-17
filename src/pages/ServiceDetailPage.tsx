@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { services, products } from '../data/paintData';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Badge, Button, BeforeAfterSlider, SectionHeading } from '../components/ui';
@@ -10,6 +10,7 @@ interface ServiceDetailProps {
 }
 
 export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
+  const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const service = services.find(s => s.slug === slug);
 
@@ -195,7 +196,7 @@ export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
               id={`btn-book-service-${service.slug}`}
               variant="accent" 
               size="lg"
-              onClick={() => window.location.href = `/services/book?service=${service.slug}`}
+              onClick={() => navigate(`/services/book?service=${service.slug}`)}
             >
               Book {service.name} Now →
             </Button>

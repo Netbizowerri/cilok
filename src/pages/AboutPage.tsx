@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Badge, Button, SectionHeading } from '../components/ui';
 import { ShieldCheck, Snowflake, FlaskConical, Map, Landmark, PhoneCall } from 'lucide-react';
 
 export function AboutPage() {
+  const navigate = useNavigate();
   return (
     <PageWrapper>
       
@@ -212,7 +214,7 @@ export function AboutPage() {
             id="btn-about-cta"
             variant="accent" 
             size="lg"
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => navigate('/contact')}
           >
             Get in Touch Today
           </Button>

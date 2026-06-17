@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Info, ArrowRight, Loader2, PartyPopper } from 'lucide-react';
 import { Button } from '../ui';
@@ -6,6 +7,7 @@ import { products } from '../../data/paintData';
 import { getFormEndpoint } from '../../utils/env';
 
 export function ProductOrderForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -136,10 +138,10 @@ export function ProductOrderForm() {
           Thank you for choosing Cilok Paint. We have successfully recorded your details. A dedicated product specialist from our factory or your nearest distributor zone will contact you within 24 hours to confirm shipping details and payment terms.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" size="md" onClick={() => window.location.href = '/'}>
+          <Button variant="primary" size="md" onClick={() => navigate('/')}>
             Back to Homepage
           </Button>
-          <Button variant="secondary" size="md" onClick={() => window.location.href = '/services'}>
+          <Button variant="secondary" size="md" onClick={() => navigate('/services')}>
             Explore Application Services
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { useState, useRef, type ChangeEvent, type DragEvent, type FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Info, Loader2, Upload, PartyPopper, Trash2 } from 'lucide-react';
 import { Button } from '../ui';
@@ -6,6 +7,7 @@ import { services, products } from '../../data/paintData';
 import { getFormEndpoint } from '../../utils/env';
 
 export function ServiceBookingForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -148,10 +150,10 @@ export function ServiceBookingForm() {
           Your request to book our application specialists has been received. Our chief sites engineer will review your dimensions and photos, and call you shortly to confirm the scheduled site visit date. Get ready to redefine your walls!
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" size="md" onClick={() => window.location.href = '/'}>
+          <Button variant="primary" size="md" onClick={() => navigate('/')}>
             Return to Home
           </Button>
-          <Button variant="secondary" size="md" onClick={() => window.location.href = '/projects'}>
+          <Button variant="secondary" size="md" onClick={() => navigate('/projects')}>
             Browse Past Projects
           </Button>
         </div>
