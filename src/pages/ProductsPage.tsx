@@ -67,7 +67,7 @@ export function ProductsPage({ onOpenConsultation }: ProductsProps) {
                     onClick={() => setSelectedTab(tab)}
                     className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                       selectedTab === tab 
-                        ? 'bg-brand-primary text-white shadow-md' 
+                        ? 'bg-brand-primary text-black shadow-md' 
                         : 'bg-white text-brand-dark border border-brand-muted hover:border-brand-primary/55'
                     }`}
                   >

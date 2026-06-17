@@ -146,7 +146,7 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
             eyebrow="Application Instructions"
             heading={`How to Apply ${product.name}`}
             subheading="Carefully compiled by our factory engineers to guarantee an immaculate finish on your building site."
-          />
+            inverse/>
 
           <div className="space-y-6">
             {product.howToApply.map((step, idx) => (
@@ -170,7 +170,7 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
             eyebrow="Technical FAQ"
             heading="Frequently Asked Questions"
             subheading="Clear, objective explanations on product washing, wall preparations, and chemical compositions."
-          />
+            inverse/>
           <FAQAccordion items={product.faqs} />
         </div>
       </section>
@@ -182,7 +182,7 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
             eyebrow="Related Formulations"
             heading="Recommended Product Pairings"
             subheading="These companion cements, textured sealers, or paints expand coverage and build durable wall systems."
-          />
+            inverse/>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedProducts.map(p => (

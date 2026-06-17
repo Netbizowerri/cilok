@@ -458,8 +458,6 @@ export const projects: Project[] = [
     category: 'Residential',
     services: ['Wall Screeding', 'Paint Application', 'Weatherproof Shield'],
     image: 'https://i.ibb.co/wrKbMfhS/CILOK-8.jpg',
-    beforeImage: 'https://i.ibb.co/235G9MWB/CILOK-7.jpg',
-    afterImage: 'https://i.ibb.co/wrKbMfhS/CILOK-8.jpg',
     description: "An incredible before-and-after narrative of modern architectural transformation. The property was upgraded from an uncompleted brick shell into a breathtaking, light-filled contemporary masterpiece. Applying Cilok premium base putty achieved a perfectly leveled plane, finished with multiple high-opacity coats of our ultra-durable weatherproof exterior white emulsion."
   },
   {
@@ -480,8 +478,6 @@ export const projects: Project[] = [
     category: 'Residential',
     services: ['Stucco Finish', 'Wall Screeding', 'Textured Finish'],
     image: 'https://i.ibb.co/xtZ1dr5H/CILOK-11.jpg',
-    beforeImage: 'https://i.ibb.co/hR3j2Pf0/CILOK-10.jpg',
-    afterImage: 'https://i.ibb.co/xtZ1dr5H/CILOK-11.jpg',
     description: "An exquisite showcase of high-end Stucco wall finishing. The project demonstrates the stunning transformation of raw, unrefined interior wall surfaces into a masterpiece of texture and visual depth. Hand-polished by skilled artisans with Cilok's advanced stucco plaster compound, the resulting marble-like surface boasts beautiful natural tonal variances and high-sheen architectural luxury."
   },
 ];
