@@ -72,9 +72,9 @@ export const products: Product[] = [
     slug: 'matt-paint',
     name: 'Matt Paint',
     category: 'paint',
-    badge: 'Interior',
-    description: 'A flat, non-reflective finish ideal for hiding surface imperfections on interior walls.',
-    longDescription: 'Cilok Matt Paint provides an elegant, completely level, non-reflective finish. Perfect for concealing minor structural waviness or drywall joint imperfections, it gives a sophisticated, velvety visual depth to interior spaces, ceilings, and residential parlors. Formulated for longevity, it offers excellent opacity and steady color retention.',
+    badge: 'Interior/Exterior',
+    description: 'A flat, non reflective finish, ideal for hiding surface imperfections on interior/exterior walls.',
+    longDescription: 'A flat, non reflective finish, ideal for hiding surface imperfections on interior/exterior walls.',
     features: [
       'Completely flat, velvety non-reflective finish',
       'Superb concealing power (excellent for hiding surface blemishes)',
@@ -140,11 +140,11 @@ export const products: Product[] = [
   },
   {
     slug: 'wall-putty',
-    name: 'Wall Putty',
+    name: 'Wall Putty (Screeding bond)',
     category: 'prep',
     badge: 'Prep Coat',
-    description: 'A premium white cement-based putty for achieving a perfectly smooth base coat before painting.',
-    longDescription: 'Cilok Wall Putty is the foundation of high-grade wall screeding. It provides tensile strength, superior water-resistance, and an ultra-fine white base that acts as a canvas. When applied correctly, it prevents standard paint peel, cuts down paint absorption (saving raw paint volume), and yields a perfectly level, glassy surface.',
+    description: 'A ready-mix, water resistant acrylic based paste. Applied to exterior/interior plastered wall to create a perfectly smooth, level and crack free bonded surface. It also reduces paint consumption.',
+    longDescription: 'A ready-mix, water resistant acrylic based paste. Applied to exterior/interior plastered wall to create a perfectly smooth, level and crack free bonded surface. It also reduces paint consumption.',
     features: [
       'Fills microscopic pores and hairline masonry cracks',
       'Exceptional adhesion power to concrete plasters',
@@ -480,22 +480,52 @@ export const projects: Project[] = [
     image: 'https://i.ibb.co/xtZ1dr5H/CILOK-11.jpg',
     description: "An exquisite showcase of high-end Stucco wall finishing. The project demonstrates the stunning transformation of raw, unrefined interior wall surfaces into a masterpiece of texture and visual depth. Hand-polished by skilled artisans with Cilok's advanced stucco plaster compound, the resulting marble-like surface boasts beautiful natural tonal variances and high-sheen architectural luxury."
   },
+  {
+    id: 'palace-effects',
+    name: "Luxury Palace Effects Finish",
+    client: 'Private Client',
+    location: '',
+    category: 'Residential',
+    services: ['Palace Effects', 'Decorative Finishes'],
+    image: 'https://i.ibb.co/vCyWVyPB/Palace-Effects.jpg',
+    description: "A stunning showcase of our premium Palace Effects decorative finish. This luxurious treatment transforms ordinary walls into opulent statements of style and sophistication, featuring rich depth and luminous character that elevates any interior space."
+  },
+  {
+    id: 'pearl-effect-showcase',
+    name: "Pearl Effect Decorative Finish",
+    client: 'Private Client',
+    location: '',
+    category: 'Residential',
+    services: ['Pearl Effect', 'Decorative Finishes'],
+    image: 'https://i.ibb.co/VY1gZV20/Pearl-Effect.jpg',
+    description: "An elegant demonstration of our Pearl Effect finish, capturing the subtle iridescence and soft luminescence that brings walls to life. This refined treatment adds a shimmering, sophisticated dimension to residential and commercial interiors."
+  },
+  {
+    id: 'ottochinto-showcase',
+    name: "Ottochinto Velvet Textured Finish",
+    client: 'Private Client',
+    location: '',
+    category: 'Residential',
+    services: ['Ottochinto', 'Decorative Finishes'],
+    image: 'https://i.ibb.co/mLrc6pN/Ottocinto.jpg',
+    description: "A breathtaking Ottochinto velvet-textured wall finish that replicates the luxurious feel of fine suede. Applied using specialized layered circular stippled strokes, the result is a warm, richly textured surface that shifts dramatically under light, perfect for executive interiors."
+  },
 ];
 
 export const testimonials = [
   {
     quote: "Cilok Paint redefined the visual standards of the Bishop's Residence. Their screeding is masterclass, flat as glass, and the Silk Paint has withstood the dusty Onitsha harmattans beautifully. High recommendation.",
-    author: "Engr. Clement Okoye",
-    role: "Project Manager, Paul-B Nigeria Ltd"
+    author: "Arch. Kingsley",
+    role: "Project Manager, Mode Nig. Ltd"
   },
   {
     quote: "We utilized Cilok's Stucco and Pearl finishes at Vine Suites, Agu-Awka. The metallic sand shimmer has had guest heads turning since day one. Absolute brilliance in service delivery.",
-    author: "Chief Charles Nwajagu",
-    role: "Proprietor, Vine Suites"
+    author: "Chief Tony Nnaemego",
+    role: "MD/CEO, Vine Suites"
   },
   {
     quote: "Formulation matters. As contractors in Abuja and eastern states, dry-out, weather cracking, and moss are always threats. Cilok is fully resilient to tropical downpours.",
-    author: "Arch. Jude Nwoke",
-    role: "Principal Contractor, Mode Nigeria"
+    author: "Engr. Chudy Okudo",
+    role: "Gen. Manager, Paul.B Nig. Ltd"
   }
 ];

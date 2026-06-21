@@ -95,7 +95,8 @@ export function Footer() {
           <div className="flex gap-3 text-sm text-zinc-300 leading-relaxed">
             <MapPin className="w-5 h-5 text-brand-accent shrink-0 mt-0.5" />
             <address className="not-italic">
-              <strong className="text-white block mb-1 font-display">Cilok Factory Head Office</strong>
+              <strong className="text-white block mb-1 font-display">Cilok Coating and Technical Services Ltd</strong>
+              <span className="text-[10px] text-brand-accent font-mono uppercase tracking-wider block mb-1">(Producers of Cilok Paint)</span>
               25 Limca Road (Opp. Mr Biggs),<br />
               Nkpor Old Road,<br />
               Anambra State, Nigeria
@@ -135,7 +136,7 @@ export function Footer() {
       {/* Copyright Footer Sub-section */}
       <div className="border-t border-zinc-900 py-8 bg-black/60">
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-zinc-500">
-          <p>© {currentYear} Cilok Paint. All Rights Reserved. ...bring your vision to life.</p>
+          <p>© {currentYear} Cilok Coating and Technical Services Ltd. All Rights Reserved. ...bring your vision to life.</p>
           <div className="flex items-center gap-6">
             <span className="hover:text-brand-accent transition-colors">Beauty Redefined</span>
             <span className="w-1.5 h-1.5 rounded-full bg-brand-accent" />

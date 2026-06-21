@@ -44,7 +44,7 @@ export function AboutPage() {
             </h2>
             <div className="text-sm md:text-base text-text-soft leading-relaxed space-y-4 font-light">
               <p>
-                Founded on the values of absolute structural durability and aesthetic visual balance, Cilok Paint has grown from a specialized technical paint workshop in Anambra State to a trusted national wall coating brand. 
+                Founded on the values of absolute structural durability and aesthetic visual balance, Cilok Coating and Technical Services Ltd has grown from a specialized technical paint workshop in Anambra State to a trusted national wall coating brand, producing Cilok Paint. 
               </p>
               <p>
                 We realized early on that standard international paints often fail under the punishing sun, sudden moisture drenching, and parching Harmattan dust storms characteristic of the West African climate. This led to our creation of climate-specific formulations with superior polyurethane binders and elastomeric properties.
@@ -134,12 +134,12 @@ export function AboutPage() {
           </div>
 
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-            <Badge variant="accent">FACTORY & PRODUCTION</Badge>
+            <Badge variant="accent">QUALITY CONTROL</Badge>
             <h3 className="font-display font-medium text-2xl lg:text-3xl text-brand-dark leading-snug">
-              Pristine Quality Control Directly from Source
+              Quality Control
             </h3>
             <p className="text-sm text-text-soft leading-relaxed font-light">
-              Because we manufacture every block of paint directly at our Anambra factory, we eliminate third-party markup fees of imported distributors. This ensures we deliver top-tier European raw materials at highly competitive domestic Nigerian rates.
+              At Cilok Paint, we ensure that products meet defined standards before, during and after manufacturing to ensure durability, viscosity, opacity, colour accuracy and general customer satisfaction.
             </p>
           </div>
 
@@ -153,31 +153,20 @@ export function AboutPage() {
             eyebrow="Logistical Coordinates"
             heading="Distribution Hubs across Nigeria"
             subheading="Cilok maintains fully stocked distributor stores across multiple major nodes, facilitating simple, rapid site deliveries."
+            inverse
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-3xl border border-brand-muted shadow-sm text-center">
-              <div className="font-display font-bold text-lg text-brand-primary mb-1">Awka Depot</div>
-              <span className="text-[10px] bg-brand-muted px-2.5 py-0.5 rounded font-extrabold text-brand-accent tracking-widest uppercase">Anambra State</span>
-              <p className="text-xs text-text-soft mt-3 mb-1">Direct deliveries within Udoka Estate, Agu-Awka, and surrounding cities.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-3xl border border-brand-muted shadow-sm text-center">
-              <div className="font-display font-bold text-lg text-brand-primary mb-1">Enugu Depot</div>
-              <span className="text-[10px] bg-brand-muted px-2.5 py-0.5 rounded font-extrabold text-brand-accent tracking-widest uppercase">Enugu State</span>
-              <p className="text-xs text-text-soft mt-3 mb-1">Rapid logistics to Independence Layout, GRA, and Trans-Ekulu developments.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-3xl border border-brand-muted shadow-sm text-center">
-              <div className="font-display font-bold text-lg text-brand-primary mb-1">Port Harcourt Depot</div>
-              <span className="text-[10px] bg-brand-muted px-2.5 py-0.5 rounded font-extrabold text-brand-accent tracking-widest uppercase">Rivers State</span>
-              <p className="text-xs text-text-soft mt-3 mb-1">Marine weathering formulations supplied to residential sites across PHC.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-3xl border border-brand-muted shadow-sm text-center">
-              <div className="font-display font-bold text-lg text-brand-primary mb-1">Abuja Depot</div>
-              <span className="text-[10px] bg-brand-muted px-2.5 py-0.5 rounded font-extrabold text-brand-accent tracking-widest uppercase">FCT - Capital</span>
-              <p className="text-xs text-text-soft mt-3 mb-1">Supplying luxury villas, estates, and guest houses in Maitama, Gwarinpa, and Asokoro.</p>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <p className="text-base md:text-lg text-text-soft leading-relaxed">
+              We have a nationwide coverage that transcends barriers to reach you no matter your location.
+            </p>
+            <div className="border-t border-brand-muted/40 pt-6">
+              <p className="text-sm md:text-base text-brand-primary leading-relaxed font-semibold">
+                In collaboration with <span className="text-brand-accent">GO WORLD REAL ESTATE LTD.</span>
+              </p>
+              <p className="text-xs md:text-sm text-text-soft leading-relaxed mt-2">
+                We serve as agent/distributor (in Nigeria) to <span className="text-brand-accent font-semibold">TERRACO GROUP</span>, a Swedish global leader in the formulation and distribution of Premium Paint, Architectural facade, Tiles adhesive etc.
+              </p>
             </div>
           </div>
         </div>
@@ -190,6 +179,7 @@ export function AboutPage() {
             eyebrow="Contract Partners"
             heading="General Contractors Relying on Cilok"
             subheading="These notable engineering, architecture, and holding corporations select Cilok Paint for major institutional commissions."
+            inverse
           />
 
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 items-center justify-center pt-4 opacity-75">
@@ -203,8 +193,11 @@ export function AboutPage() {
       </section>
 
       {/* CTA Anchor to contact page */}
-      <section className="py-16 md:py-20 bg-brand-primary text-white text-center">
-        <div className="max-w-3xl mx-auto px-5">
+      <section className="relative py-16 md:py-20 bg-cover bg-center text-white text-center overflow-hidden"
+        style={{ backgroundImage: "url('https://i.ibb.co/ZpMJ8vtQ/CILOK-13.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/70 z-0"></div>
+        <div className="max-w-3xl mx-auto px-5 relative z-10">
           <PhoneCall className="w-12 h-12 text-brand-accent mx-auto mb-4 animate-bounce" />
           <h3 className="font-display font-medium text-2xl mb-3">Partner with Nigeria’s Finest Decorators</h3>
           <p className="text-xs sm:text-sm text-brand-secondary/85 leading-relaxed mb-6">

@@ -53,9 +53,9 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="paintSplatter" width="200" height="200" patternUnits="userSpaceOnUse">
-                <path d="M50 30 C 70 20, 80 40, 60 50 C 40 60, 30 40, 50 30 Z" fill="#D4FF00" />
+                <path d="M50 30 C 70 20, 80 40, 60 50 C 40 60, 30 40, 50 30 Z" fill="#90A3EE" />
                 <path d="M150 120 C 160 110, 180 130, 170 140 C 160 150, 140 140, 150 120 Z" fill="#EF4444" />
-                <circle cx="120" cy="50" r="8" fill="#D4FF00" />
+                <circle cx="120" cy="50" r="8" fill="#90A3EE" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#paintSplatter)" />
@@ -64,7 +64,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
 
         <div className="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 w-full">
           {/* Hero text (Left 60%) */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          <div className="lg:col-span-12 flex flex-col justify-center text-left">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -139,50 +139,12 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
             </motion.div>
           </div>
 
-          {/* Hero visual panel (Right 55%) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="hidden lg:flex lg:col-span-5 relative items-center justify-center lg:p-0"
-          >
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=80&w=600" 
-                alt="Modern luxurious interior wall finished with Silk paint rendering smooth sheen colors" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent" />
-              
-              {/* Dynamic Overlay badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/15 text-white">
-                <span className="text-[10px] text-brand-accent uppercase font-extrabold tracking-widest block mb-1">Featured Coating Finish</span>
-                <h4 className="font-display font-medium text-lg leading-tight">Palace Pearlescent Swirls</h4>
-                <p className="text-[11px] text-brand-secondary/80 mt-1">Lustrous mineral sand texture that glimmers naturally under daylight</p>
-              </div>
-            </div>
-
-            {/* Small floating graphic card */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-              className="absolute -top-4 -left-4 bg-white p-4 rounded-2xl shadow-2xl border border-brand-muted shrink-0 hidden sm:flex items-center gap-3"
-            >
-              <div className="bg-brand-secondary p-2.5 rounded-full text-brand-primary">
-                <Star className="w-5 h-5 fill-brand-accent text-brand-accent" />
-              </div>
-              <div>
-                <span className="text-xs uppercase font-extrabold tracking-widest text-brand-primary block">Warranted</span>
-                <span className="text-[11px] font-semibold text-text-soft">UV and Moisture Immune</span>
-              </div>
-            </motion.div>
-          </motion.div>
+          {/* Hero visual panel - removed */}
         </div>
       </section>
 
       {/* 2. TRUST BRAND MARQUEE */}
-      <section className="bg-[#0A0A0A] py-7 border-y border-zinc-900 relative overflow-hidden select-none">
+      <section className="bg-[#021526] py-7 border-y border-zinc-900 relative overflow-hidden select-none">
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center gap-6 justify-between select-none">
           <span className="text-xs uppercase font-extrabold tracking-widest text-brand-primary shrink-0 flex items-center gap-1.5 self-center font-mono">
             <span className="w-2 h-2 rounded-full bg-brand-primary inline-block animate-ping" />
@@ -198,12 +160,12 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
       </section>
 
       {/* 3. PRODUCTS AT A GLANCE */}
-      <section className="py-20 md:py-28 bg-[#FAFFF2] border-y border-zinc-200/50">
+      <section className="py-20 md:py-28 bg-[#F2F3FF] border-y border-zinc-200/50">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <SectionHeading 
             eyebrow="Our Product Collection"
-            heading="Premium Decorative Coatings"
-            subheading="Scientifically crafted paint formulations, undercoats, and skirting boards built to survive tropical Downpours."
+            heading="PRODUCT RANGE/SERVICES"
+            subheading="Cilok paints have been developed and formulated to provide good quality coating with long term value, highly attractive finishes, wide range of aesthetically pleasing colours etc, that will withstand all tropical weather conditions of West Africa Sub region."
             inverse={false}
           />
 
@@ -304,28 +266,28 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
               </div>
             </div>
 
-            {/* Row 2: Crackos Premium Finish (services[5]) */}
+            {/* Row 2: Decorative Wall Finishes */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
               <div className="lg:col-span-6">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
                   <img 
-                    src="https://i.ibb.co/hkss4Ph/CILOK-1.jpg" 
-                    alt="Crackos premium antique crackle decorative finish"
+                    src="https://i.ibb.co/HT7jwzsd/Cilok-16.jpg" 
+                    alt="Decorative wall finishes showcase"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
               <div className="lg:col-span-6">
-                <span className="text-xs text-brand-primary uppercase font-extrabold font-mono tracking-widest block mb-2">// Prestige Finishing</span>
+                <span className="text-xs text-brand-primary uppercase font-extrabold font-mono tracking-widest block mb-2">// DECORATIVE WALL FINISHES/DESIGN</span>
                 <h3 className="font-display font-black text-2xl md:text-3xl text-white mb-4 uppercase">
-                  Crackos Premium Textured Crackle
+                  DECORATIVE WALL FINISHES/DESIGN
                 </h3>
                 <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-6">
-                  Transform master suites, grand feature backdrops, and luxury receiving columns into ultimate weathered-stone geological showpieces. Replicating the organic allure of antique travertine and earth fissures, Crackos is formulated from specialized high-elasticity structural minerals layered with hand-drawn gold or bronze vein stencils. A tactile masterpiece that continuously catches light and shadow with maximum distinction.
+                  Transform master suites, luxury living room/bedroom, reception area, ante-room or plain spaces into tailored design that enhance its depth, beauty, create focal points and bring an artisanal touch residential/commercial spaces.
                 </p>
                 <div className="flex flex-col gap-3 mb-8">
-                  {['Organic mineral crackle & antique travertine styling', 'Certified artisan hand-drawing for high-contrast fissures', 'Moisture-defying, scrub-immune protective glaze layer'].map((pt, i) => (
+                  {['Crackle Effects', 'Stucco', 'Ottocinto', 'Pearl Effect', 'Tryolean etc'].map((pt, i) => (
                     <span key={i} className="text-xs md:text-sm font-semibold text-brand-primary flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-primary shrink-0" />
                       {pt}
@@ -333,11 +295,11 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="primary" size="sm" onClick={() => navigate('/services/crackos-effect')}>
-                    Explore Crackos Finish
+                  <Button variant="primary" size="sm" onClick={() => navigate('/services')}>
+                    Explore All Finishes
                   </Button>
                   <Button variant="secondary" size="sm" onClick={() => navigate('/services/book')}>
-                    Book Premium Finish
+                    Book a Consultation
                   </Button>
                 </div>
               </div>
@@ -348,7 +310,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
       </section>
 
       {/* 5. WHY CILOK PAINT */}
-      <section className="py-20 md:py-28 bg-[#121212] relative overflow-hidden border-b border-zinc-900">
+      <section className="py-20 md:py-28 bg-[#021526] relative overflow-hidden border-b border-zinc-900">
         {/* Abstract background vector elements */}
         <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-brand-primary/5 rounded-full blur-[100px]" />
         
@@ -415,7 +377,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
       </section>
 
       {/* 6. FEATURED PROJECTS PORTFOLIO */}
-      <section className="py-20 md:py-28 bg-[#FAFFF2] border-y border-zinc-200">
+      <section className="py-20 md:py-28 bg-[#F2F3FF] border-y border-zinc-200">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <SectionHeading 
             eyebrow="Our Built Heritage"
@@ -426,7 +388,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
 
           {/* Grid of 6 projects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 6).map((proj) => (
+            {projects.slice(0, 9).map((proj) => (
               <motion.div
                 key={proj.id}
                 whileHover={{ y: -6 }}
@@ -526,7 +488,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
           <div className="border-t border-white/10 pt-10 text-center">
             <span className="text-xs uppercase font-extrabold tracking-widest text-brand-accent block mb-8">Notable Organizations Served:</span>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-65">
-              {['Paul-B Nigeria Ltd', 'Mode Nigeria Ltd', 'Tonimas Nigeria Ltd', 'Catholic Charismatic Renewal', 'Chikason Group'].map((org, i) => (
+              {['Paul-B Nigeria Ltd', 'Mode Nigeria Ltd', 'Tonimas Nigeria Ltd', 'Catholic Charismatic Renewal', 'Chikason Group', 'Anambra State Government', 'Ike Udeh Foundation'].map((org, i) => (
                 <span key={i} className="font-display text-sm md:text-base text-white/80 tracking-widest font-semibold block uppercase">
                   {org}
                 </span>
@@ -538,7 +500,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
 
       {/* 8. CTA BANNER UNIT */}
       <section className="py-16 md:py-24 bg-[#070707] border-t border-zinc-900 text-white text-center relative overflow-hidden select-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(212,255,0,0.06),_transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(144,163,238,0.06),_transparent)] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-5 md:px-10 relative z-10">
           <SectionHeading 
             eyebrow="Transformation Call"

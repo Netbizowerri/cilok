@@ -37,9 +37,9 @@ export function Button({ variant = 'primary', size = 'md', children, className =
   const baseStyle = 'font-bold rounded-full tracking-wide transition-all duration-200 inline-flex items-center justify-center shadow-md select-none focus:outline-none';
   
   const variantStyles = {
-    primary: 'bg-brand-primary text-black font-extrabold hover:bg-brand-primary/90 hover:shadow-[0_0_15px_rgba(212,255,0,0.45)]',
-    secondary: 'border-2 border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-black hover:shadow-[0_0_10px_rgba(212,255,0,0.25)]',
-    accent: 'bg-brand-accent text-black font-extrabold hover:bg-brand-accent/90 hover:shadow-[0_0_15px_rgba(212,255,0,0.45)]',
+    primary: 'bg-brand-primary text-brand-dark font-extrabold hover:bg-brand-primary/90 hover:shadow-[0_0_15px_rgba(144,163,238,0.45)]',
+    secondary: 'border-2 border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-brand-dark hover:shadow-[0_0_10px_rgba(144,163,238,0.25)]',
+    accent: 'bg-brand-accent text-brand-dark font-extrabold hover:bg-brand-accent/90 hover:shadow-[0_0_15px_rgba(144,163,238,0.45)]',
     red: 'bg-brand-red text-white hover:bg-brand-red/90',
     ghost: 'bg-transparent text-brand-primary shadow-none hover:bg-brand-primary/10',
     dark: 'bg-zinc-950 text-white border-2 border-zinc-800 font-extrabold hover:bg-zinc-900 hover:border-zinc-700 hover:text-brand-accent hover:shadow-[0_0_15px_rgba(212,160,23,0.15)] transition-all duration-300',

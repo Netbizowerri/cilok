@@ -6,18 +6,18 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-brand-primary: #D4FF00;   /* Neon yellow/lime highlight */
-  --color-brand-secondary: #1A1A1A; /* Dark card background */
-  --color-brand-accent: #D4FF00;    /* Neon highlight */
-  --color-brand-red: #EF4444;       /* Neon high-contrast red */
-  --color-brand-surface: #0F0F0F;   /* Deep charcoal space black */
-  --color-brand-muted: #27272A;     /* Zinc-800 borders */
-  --color-brand-dark: #000000;      /* Pure black sections */
+  --color-brand-primary: #90A3EE;   /* Soft blue accent */
+  --color-brand-secondary: #021526; /* Dark card background */
+  --color-brand-accent: #90A3EE;    /* Soft blue highlight */
+  --color-brand-red: #EF4444;       /* High-contrast red */
+  --color-brand-surface: #021526;   /* Deep navy surface */
+  --color-brand-muted: #2A3A5C;     /* Blue-tinted borders */
+  --color-brand-dark: #021526;      /* Deep navy sections */
   
-  --color-text-base: #F5F5F5;       /* Light theme-white text */
-  --color-text-soft: #A1A1AA;       /* Zinc gray secondary text */
-  --color-text-inverse: #0A0A0A;    /* Contrast deep text on yellow background */
-  --color-text-gold: #D4FF00;       /* Align gold to neon yellow accent */
+  --color-text-base: #F5F5F5;       /* Light text */
+  --color-text-soft: #A1A1AA;       /* Gray secondary text */
+  --color-text-inverse: #F2F3FF;    /* Light blue-white for contrast */
+  --color-text-gold: #90A3EE;       /* Align to soft blue accent */
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 
 /* Global design overrides to apply "Artistic Flair" Dark Mode naturally */
 .bg-white {
-  background-color: var(--color-brand-secondary) !important;
+  background-color: #F2F3FF !important;
 }
 
 .text-brand-dark {
@@ -58,44 +58,44 @@ body {
 
 /* Custom overlay colors */
 .bg-brand-secondary\/25 {
-  background-color: rgba(39, 39, 42, 0.45) !important;
+  background-color: rgba(2, 21, 38, 0.45) !important;
 }
 
 .bg-brand-secondary\/30 {
-  background-color: rgba(39, 39, 42, 0.50) !important;
+  background-color: rgba(2, 21, 38, 0.50) !important;
 }
 
 .bg-brand-secondary\/35 {
-  background-color: rgba(39, 39, 42, 0.55) !important;
+  background-color: rgba(2, 21, 38, 0.55) !important;
 }
 
 .bg-brand-secondary\/40 {
-  background-color: rgba(39, 39, 42, 0.60) !important;
+  background-color: rgba(2, 21, 38, 0.60) !important;
 }
 
 .bg-brand-accent\/15 {
-  background-color: rgba(212, 255, 0, 0.15) !important;
+  background-color: rgba(144, 163, 238, 0.15) !important;
   color: var(--color-brand-primary) !important;
 }
 
 /* Force dark styling on inputs & forms */
 input, textarea, select {
-  background-color: #121212 !important;
+  background-color: #021526 !important;
   color: #F5F5F5 !important;
-  border-color: #27272A !important;
+  border-color: #2A3A5C !important;
 }
 
 input:focus, textarea:focus, select:focus {
   border-color: var(--color-brand-primary) !important;
   outline: none;
-  box-shadow: 0 0 10px rgba(212, 255, 0, 0.2);
+  box-shadow: 0 0 10px rgba(144, 163, 238, 0.3);
 }
 
 /* Glass navigation overlay styled modern dark */
 .glass-nav {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(15, 15, 15, 0.85) !important;
+  background-color: rgba(2, 21, 38, 0.85) !important;
   border-bottom: 1px solid var(--color-brand-muted) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
@@ -103,7 +103,7 @@ input:focus, textarea:focus, select:focus {
 /* Selection aesthetics */
 ::selection {
   background-color: var(--color-brand-primary);
-  color: #000000;
+  color: #021526;
 }
 
 /* Decorative backdrop blur matching the original HTML */

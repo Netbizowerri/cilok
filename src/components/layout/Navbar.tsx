@@ -91,7 +91,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full -left-48 w-[450px] bg-[#121212] border border-zinc-800 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.85)] p-6 grid grid-cols-2 gap-4 mt-1"
+                    className="absolute top-full -left-48 w-[450px] bg-[#021526] border border-zinc-800 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.85)] p-6 grid grid-cols-2 gap-4 mt-1"
                   >
                     <div className="col-span-2 border-b border-zinc-800 pb-2 mb-2">
                       <span className="text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-brand-accent">// Paint Product Formulations</span>
@@ -138,7 +138,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full -left-48 w-[500px] bg-[#121212] border border-zinc-800 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.85)] p-6 grid grid-cols-2 gap-4 mt-1"
+                    className="absolute top-full -left-48 w-[500px] bg-[#021526] border border-zinc-800 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.85)] p-6 grid grid-cols-2 gap-4 mt-1"
                   >
                     <div className="col-span-2 border-b border-zinc-800 pb-2 mb-2">
                       <span className="text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-brand-accent">// Expert Application Guild</span>
