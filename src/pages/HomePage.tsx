@@ -512,7 +512,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
             <Button 
               id="cta-home-bottom-quote"
               variant="accent" 
-              size="lg"
+              size="sm"
               onClick={() => navigate('/products/order')}
               className="w-full sm:w-auto"
             >
@@ -521,7 +521,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
             <Button 
               id="cta-home-bottom-consultation"
               variant="secondary" 
-              size="lg"
+              size="sm"
               onClick={onOpenConsultation}
               className="w-full sm:w-auto"
             >

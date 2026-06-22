@@ -332,7 +332,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             <div className="flex flex-col gap-4 mt-8 border-t border-white/10 pt-6">
               <Button 
                 variant="accent" 
-                size="lg" 
+                size="sm"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenConsultation();
