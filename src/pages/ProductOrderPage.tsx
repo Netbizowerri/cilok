@@ -38,7 +38,7 @@ export function ProductOrderPage() {
               {/* Card 1 */}
               <div className="bg-white p-6 rounded-3xl border border-brand-muted/75 shadow-sm">
                 <Truck className="w-8 h-8 text-brand-primary mb-4" />
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">
+                <h4 className="font-display font-bold text-base text-black mb-2">
                   Reliable Nationwide Shipping
                 </h4>
                 <p className="text-xs text-text-soft leading-relaxed">
@@ -49,7 +49,7 @@ export function ProductOrderPage() {
               {/* Card 2 */}
               <div className="bg-white p-6 rounded-3xl border border-brand-muted/75 shadow-sm">
                 <Clock className="w-8 h-8 text-brand-primary mb-4" />
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">
+                <h4 className="font-display font-bold text-base text-black mb-2">
                   3-Day Prep Limit
                 </h4>
                 <p className="text-xs text-text-soft leading-relaxed">
@@ -60,7 +60,7 @@ export function ProductOrderPage() {
               {/* Card 3 */}
               <div className="bg-white p-6 rounded-3xl border border-brand-muted/75 shadow-sm">
                 <ShieldCheck className="w-8 h-8 text-brand-primary mb-4" />
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">
+                <h4 className="font-display font-bold text-base text-black mb-2">
                   Double Sealed Guarantee
                 </h4>
                 <p className="text-xs text-text-soft leading-relaxed">
@@ -77,7 +77,7 @@ export function ProductOrderPage() {
                 <p className="text-xs text-brand-primary leading-relaxed mb-4">
                   Contractors with custom logistics carriers can select "Factory Direct" pickup to receive material crates directly from our Nkpor-Onitsha loading bays.
                 </p>
-                <address className="not-italic text-xs font-bold text-brand-dark">
+                <address className="not-italic text-xs font-bold text-black">
                   25 Limca Road (Opp. Mr Biggs),<br />
                   Nkpor Old Road, Anambra State
                 </address>

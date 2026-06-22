@@ -169,10 +169,10 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
       {items.map((item, idx) => {
         const isOpen = openIndex === idx;
         return (
-          <div key={idx} className="border border-brand-muted rounded-2xl bg-white overflow-hidden shadow-sm">
+          <div key={idx} className="border border-zinc-800/80 rounded-2xl bg-zinc-950 overflow-hidden shadow-sm">
             <button
               onClick={() => toggle(idx)}
-              className="w-full flex items-center justify-between p-5 text-left font-semibold text-brand-dark bg-transparent hover:bg-brand-secondary/30 transition-colors"
+              className="w-full flex items-center justify-between p-5 text-left font-semibold text-black bg-transparent hover:bg-brand-secondary/30 transition-colors"
             >
               <span>{item.question}</span>
               <ChevronDown className={`w-5 h-5 text-brand-accent transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
@@ -186,7 +186,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                   transition={{ duration: 0.25, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="p-5 pt-0 border-t border-brand-muted/20 text-text-soft text-sm md:text-base leading-relaxed">
+                  <div className="p-5 pt-0 border-t border-zinc-800/40 text-text-soft text-sm md:text-base leading-relaxed">
                     {item.answer}
                   </div>
                 </motion.div>
@@ -235,23 +235,23 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 30 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative bg-white w-full max-w-xl rounded-3xl shadow-2xl z-10 overflow-hidden border border-brand-muted"
+            className="relative bg-zinc-950 w-full max-w-xl rounded-3xl shadow-2xl z-10 overflow-hidden border border-zinc-800/80"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-brand-muted bg-brand-secondary/25">
-              <h3 className="font-display font-semibold text-lg md:text-xl text-brand-dark">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800/60 bg-black/40">
+              <h3 className="font-display font-semibold text-lg md:text-xl text-white">
                 {title}
               </h3>
               <button 
                 onClick={onClose}
-                className="p-1 rounded-full hover:bg-brand-muted text-text-soft hover:text-brand-dark transition-colors"
+                className="p-1 rounded-full hover:bg-zinc-800 text-zinc-500 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Content SCROLLABLE */}
-            <div className="p-6 max-h-[75vh] overflow-y-auto">
+            <div className="p-5 md:p-6 max-h-[75vh] overflow-y-auto">
               {children}
             </div>
           </motion.div>

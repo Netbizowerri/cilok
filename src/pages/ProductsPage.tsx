@@ -166,7 +166,7 @@ export function ProductsPage({ onOpenConsultation }: ProductsProps) {
 
                 {/* Distributor Network info */}
                 <div className="bg-white p-6 rounded-3xl border border-brand-muted/70 shadow-sm">
-                  <h4 className="font-display font-bold text-sm text-brand-dark mb-3 flex items-center gap-1.5 uppercase tracking-wide">
+                  <h4 className="font-display font-bold text-sm text-black mb-3 flex items-center gap-1.5 uppercase tracking-wide">
                     <Compass className="w-4 h-4 text-brand-accent" /> Logistics Coverage
                   </h4>
                   <p className="text-xs text-text-soft leading-relaxed mb-4">
