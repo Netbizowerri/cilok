@@ -61,7 +61,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-brand-primary text-white shadow-md'
-                    : 'bg-white text-brand-dark border border-brand-muted hover:border-brand-primary/55'
+                    : 'bg-white text-black border border-brand-muted hover:border-brand-primary/55'
                 }`}
               >
                 {cat === 'All' ? 'All Sites' : cat}

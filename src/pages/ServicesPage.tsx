@@ -69,28 +69,28 @@ export function ServicesPage({ onOpenConsultation }: ServicesProps) {
                   key={serv.slug}
                   whileHover={{ y: -6, scale: 1.01 }}
                   transition={{ duration: 0.2 }}
-                  className="bg-white rounded-3xl p-6 md:p-8 border border-brand-muted/75 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    {/* Icon & Category Header */}
-                    <div className="flex items-center justify-between gap-1 mb-6">
-                      <div className="bg-brand-secondary/40 p-4 rounded-2xl flex items-center justify-center shrink-0 border border-brand-muted/20">
-                        {getServiceIcon(serv.icon)}
+                  className="bg-zinc-950 rounded-2xl p-6 md:p-8 border border-zinc-800/80 hover:border-brand-primary/40 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Icon & Category Header */}
+                      <div className="flex items-center justify-between gap-1 mb-6">
+                        <div className="bg-zinc-900 p-4 rounded-2xl flex items-center justify-center shrink-0 border border-zinc-800">
+                          {getServiceIcon(serv.icon)}
+                        </div>
+                        {isPremium && (
+                          <Badge variant="accent">Artisan Level</Badge>
+                        )}
                       </div>
-                      {isPremium && (
-                        <Badge variant="accent">Artisan Level</Badge>
-                      )}
+
+                      <h3 className="font-display font-bold text-xl text-white mb-2">
+                        {serv.name}
+                      </h3>
+                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed mb-6">
+                        {serv.description}
+                      </p>
                     </div>
 
-                    <h3 className="font-display font-bold text-xl text-brand-dark mb-2">
-                      {serv.name}
-                    </h3>
-                    <p className="text-xs md:text-sm text-text-soft leading-relaxed mb-6">
-                      {serv.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-brand-muted/20 flex flex-wrap items-center justify-between gap-4 mt-auto">
+                    <div className="pt-4 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-4 mt-auto">
                     <Link 
                       to={`/services/${serv.slug}`}
                       className="text-xs font-bold text-brand-primary hover:text-brand-accent transition-colors block"

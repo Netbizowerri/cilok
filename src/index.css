@@ -27,6 +27,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (max-width: 640px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 /* Global design overrides to apply "Artistic Flair" Dark Mode naturally */
 .bg-white {
   background-color: #F2F3FF !important;

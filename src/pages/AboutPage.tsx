@@ -34,15 +34,15 @@ export function AboutPage() {
       </section>
 
       {/* Brand story section */}
-      <section className="py-16 md:py-24 bg-white border-b border-brand-muted/40">
+      <section className="py-16 md:py-24 bg-zinc-950 border-b border-zinc-800/40">
         <div className="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           <div className="lg:col-span-7 space-y-6">
             <Badge variant="primary">OUR HISTORY</Badge>
-            <h2 className="font-display font-medium text-3xl md:text-4xl text-brand-dark leading-snug">
+            <h2 className="font-display font-medium text-3xl md:text-4xl text-white leading-snug">
               Beauty Redefined ...bring your vision to life.
             </h2>
-            <div className="text-sm md:text-base text-text-soft leading-relaxed space-y-4 font-light">
+            <div className="text-sm md:text-base text-zinc-400 leading-relaxed space-y-4 font-light">
               <p>
                 Founded on the values of absolute structural durability and aesthetic visual balance, Cilok Coating and Technical Services Ltd has grown from a specialized technical paint workshop in Anambra State to a trusted national wall coating brand, producing Cilok Paint. 
               </p>
@@ -80,34 +80,34 @@ export function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-white p-8 rounded-3xl border border-brand-muted shadow-sm hover:shadow-lg transition-all space-y-4">
+            <div className="bg-zinc-950 p-8 rounded-2xl border border-zinc-800/80 hover:border-brand-primary/40 shadow-md hover:shadow-xl transition-all space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 text-brand-primary flex items-center justify-center">
                 <FlaskConical className="w-6 h-6 text-brand-primary" />
               </div>
-              <h3 className="font-display font-bold text-lg text-brand-dark">Tropical Formulation</h3>
-              <p className="text-xs md:text-sm text-text-soft leading-relaxed leading-relaxed font-semibold">
+              <h3 className="font-display font-bold text-lg text-white">Tropical Formulation</h3>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
                 Incorporates high-grade cross-linking acrylic resins that actively resist peeling, color fading, and chalking caused by intense ultraviolet sun radiation.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white p-8 rounded-3xl border border-brand-muted shadow-sm hover:shadow-lg transition-all space-y-4">
+            <div className="bg-zinc-950 p-8 rounded-2xl border border-zinc-800/80 hover:border-brand-primary/40 shadow-md hover:shadow-xl transition-all space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 text-brand-primary flex items-center justify-center">
                 <ShieldCheck className="w-6 h-6 text-brand-primary" />
               </div>
-              <h3 className="font-display font-bold text-lg text-brand-dark">Anti-Mold rain shield</h3>
-              <p className="text-xs md:text-sm text-text-soft leading-relaxed leading-relaxed font-semibold">
+              <h3 className="font-display font-bold text-lg text-white">Anti-Mold rain shield</h3>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
                 Formulated with advanced anti-microbial biocide additives that prevent black algae, water trails, and biological moss from taking root on masonry plasters.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white p-8 rounded-3xl border border-brand-muted shadow-sm hover:shadow-lg transition-all space-y-4">
+            <div className="bg-zinc-950 p-8 rounded-2xl border border-zinc-800/80 hover:border-brand-primary/40 shadow-md hover:shadow-xl transition-all space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 text-brand-primary flex items-center justify-center">
                 <Snowflake className="w-6 h-6 text-brand-primary" />
               </div>
-              <h3 className="font-display font-bold text-lg text-brand-dark">Dust & Wash Resistance</h3>
-              <p className="text-xs md:text-sm text-text-soft leading-relaxed leading-relaxed font-semibold">
+              <h3 className="font-display font-bold text-lg text-white">Dust & Wash Resistance</h3>
+              <p className="text-xs md:text-sm text-zinc-400 leading-relaxed font-semibold">
                 Our Silk and Emulsion surfaces possess high scrub-resistance indices, allowing you to wipe off everyday mud splashes easily without losing paint luster.
               </p>
             </div>
@@ -116,16 +116,16 @@ export function AboutPage() {
       </section>
 
       {/* FACTORY AND LOGISTICAL DEPOT DATA */}
-      <section className="py-20 bg-white border-b border-brand-muted/40">
+      <section className="py-20 bg-zinc-950 border-b border-zinc-800/40">
         <div className="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="bg-brand-secondary/30 p-6 rounded-3xl border border-brand-muted/65 space-y-4">
+            <div className="bg-brand-secondary/30 p-6 rounded-2xl border border-zinc-800/80 space-y-4">
               <h4 className="font-display font-bold text-lg text-brand-primary uppercase tracking-wide">Factory Headquarters</h4>
               <p className="text-xs md:text-sm text-brand-primary font-semibold leading-relaxed">
                 Our ultra-modern manufacturing plant houses automated vertical bead mills, high-speed dispersion tanks, and color-match spectrometers. We produce up to 50,000 liters of paint daily to meet large commercial construction schedules securely.
               </p>
-              <div className="text-xs font-bold text-brand-dark border-t border-brand-muted/50 pt-3">
+              <div className="text-xs font-bold text-white border-t border-zinc-800 pt-3">
                 <span className="block text-[10px] uppercase font-bold text-brand-accent tracking-wider mb-1">Physical Address</span>
                 25 Limca Road (Opp. Mr Biggs),<br />
                 Nkpor Old Road, Anambra State
@@ -135,10 +135,10 @@ export function AboutPage() {
 
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
             <Badge variant="accent">QUALITY CONTROL</Badge>
-            <h3 className="font-display font-medium text-2xl lg:text-3xl text-brand-dark leading-snug">
+            <h3 className="font-display font-medium text-2xl lg:text-3xl text-white leading-snug">
               Quality Control
             </h3>
-            <p className="text-sm text-text-soft leading-relaxed font-light">
+            <p className="text-sm text-zinc-400 leading-relaxed font-light">
               At Cilok Paint, we ensure that products meet defined standards before, during and after manufacturing to ensure durability, viscosity, opacity, colour accuracy and general customer satisfaction.
             </p>
           </div>
@@ -173,7 +173,7 @@ export function AboutPage() {
       </section>
 
       {/* WHOS REPEATING BUSINESS WITH US - BRANDS BOARD */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-5 md:px-10 text-center">
           <SectionHeading 
             eyebrow="Contract Partners"
@@ -184,7 +184,7 @@ export function AboutPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 items-center justify-center pt-4 opacity-75">
             {['Paul-B Nigeria', 'Mode Nigeria', 'Tonimas Group', 'Chikason Group', 'Catholic Charismatic Renewal'].map((contractor, i) => (
-              <div key={i} className="bg-brand-surface p-4 rounded-2xl border border-brand-muted font-display font-bold text-sm tracking-widest uppercase text-brand-dark">
+              <div key={i} className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 font-display font-bold text-sm tracking-widest uppercase text-white">
                 {contractor}
               </div>
             ))}

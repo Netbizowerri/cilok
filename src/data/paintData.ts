@@ -252,8 +252,8 @@ export const services: Service[] = [
       'Zero-mess guarantee: detailed masking and final cleanups included'
     ],
     relatedProducts: ['silk-paint', 'matt-paint', 'emulsion'],
-    beforeImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600', // rough plain room
-    afterImage: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=600' // painted stylish room
+    beforeImage: 'https://i.ibb.co/272jcGgN/Cilok-16.jpg',
+    afterImage: 'https://i.ibb.co/272jcGgN/Cilok-16.jpg'
   },
   {
     slug: 'wall-screeding',
@@ -275,8 +275,8 @@ export const services: Service[] = [
       'Creates a 30% saving on topcoat paint consumption'
     ],
     relatedProducts: ['wall-putty'],
-    beforeImage: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&q=80&w=600', // rough wall
-    afterImage: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=80&w=600' // perfect flat wall
+    beforeImage: 'https://i.ibb.co/YTDxM7FW/CILOK.jpg',
+    afterImage: 'https://i.ibb.co/YTDxM7FW/CILOK.jpg'
   },
   {
     slug: 'tyrolean',
@@ -297,8 +297,8 @@ export const services: Service[] = [
       'Provides sound dampening and superior weathering defense'
     ],
     relatedProducts: ['texcoat'],
-    beforeImage: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&q=80&w=600'
+    beforeImage: 'https://i.ibb.co/xSw3k2rr/Untitled-design-1.jpg',
+    afterImage: 'https://i.ibb.co/xSw3k2rr/Untitled-design-1.jpg'
   },
   {
     slug: 'stucco',
@@ -320,8 +320,8 @@ export const services: Service[] = [
       'Instant touch of historic class'
     ],
     relatedProducts: ['silk-paint', 'wall-putty'],
-    beforeImage: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600'
+    beforeImage: 'https://i.ibb.co/spFWsWg0/CILOK-11.jpg',
+    afterImage: 'https://i.ibb.co/spFWsWg0/CILOK-11.jpg'
   },
   {
     slug: 'crackled-effect',
@@ -342,8 +342,8 @@ export const services: Service[] = [
       'Dozens of base/top color combinations'
     ],
     relatedProducts: ['matt-paint', 'oil-paint'],
-    beforeImage: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600'
+    beforeImage: 'https://i.ibb.co/zhfbwWzj/CILOK-1.jpg',
+    afterImage: 'https://i.ibb.co/zhfbwWzj/CILOK-1.jpg'
   },
   {
     slug: 'crackos-effect',
@@ -365,8 +365,8 @@ export const services: Service[] = [
       'Washable, scrub-immune, and highly light-responsive textures'
     ],
     relatedProducts: ['silk-paint', 'wall-putty'],
-    beforeImage: 'https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://i.ibb.co/hkss4Ph/CILOK-1.jpg'
+    beforeImage: 'https://i.ibb.co/zhfbwWzj/CILOK-1.jpg',
+    afterImage: 'https://i.ibb.co/zhfbwWzj/CILOK-1.jpg'
   },
   {
     slug: 'ottochinto',
@@ -387,8 +387,8 @@ export const services: Service[] = [
       'Highly unique visual appeal'
     ],
     relatedProducts: ['silk-paint', 'wall-putty'],
-    beforeImage: 'https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=600'
+    beforeImage: 'https://i.ibb.co/C5C4S5R2/Ottocinto.jpg',
+    afterImage: 'https://i.ibb.co/C5C4S5R2/Ottocinto.jpg'
   },
   {
     slug: 'polystyrene-pop',
@@ -410,8 +410,31 @@ export const services: Service[] = [
       'Beautiful catalog of classic, neoclassical, and modern profiles'
     ],
     relatedProducts: ['pop-materials'],
-    beforeImage: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=600',
-    afterImage: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&q=80&w=600'
+    beforeImage: 'https://i.ibb.co/8g6Z9JMD/Untitled-design-2.jpg',
+    afterImage: 'https://i.ibb.co/8g6Z9JMD/Untitled-design-2.jpg'
+  },
+  {
+    slug: 'printing-services',
+    name: 'Printing Services',
+    icon: 'Layers',
+    tagline: 'Multi-colour bucket screen printing at its finest.',
+    description: 'With our multi-colour bucket screen printing machine, we offer printing services for plastic containers ranging from 5 litres - 20 litres.',
+    longDescription: 'Cilok Paint now offers professional multi-colour bucket screen printing services for plastic containers ranging from 5 litres to 20 litres. Using our state-of-the-art screen printing machine, we deliver precise, vibrant, and durable prints on plastic containers, perfect for branding, product labeling, and promotional materials. Whether you need single-colour or multi-colour prints, our advanced equipment ensures crisp registration, consistent ink density, and long-lasting results that withstand handling and environmental exposure.',
+    processSteps: [
+      { title: 'Artwork Preparation', desc: 'We receive and prepare your artwork, ensuring proper sizing, colour separation, and screen creation.' },
+      { title: 'Screen Setup', desc: 'Our technicians mount and align screens on the multi-colour printing machine for precise registration.' },
+      { title: 'Printing', desc: 'The machine applies each colour layer sequentially with consistent pressure and alignment.' },
+      { title: 'Quality Check & Curing', desc: 'Each printed container is inspected for defect-free impressions and cured for durability.' }
+    ],
+    idealFor: ['Paint manufacturers', 'Chemical companies', 'Lubricant brands', 'Industrial packaging'],
+    differentiators: [
+      'Multi-colour capability in a single pass for reduced turnaround time',
+      'Handles containers from 5 litres to 20 litres',
+      'Crisp, consistent print quality with industrial-grade inks'
+    ],
+    relatedProducts: [],
+    beforeImage: 'https://i.ibb.co/pj2wD9rD/Whats-App-Image-2026-06-22-at-10-48-57-AM.jpg',
+    afterImage: 'https://i.ibb.co/pj2wD9rD/Whats-App-Image-2026-06-22-at-10-48-57-AM.jpg'
   }
 ];
 

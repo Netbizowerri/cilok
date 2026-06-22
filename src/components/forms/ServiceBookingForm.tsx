@@ -5,6 +5,7 @@ import { Check, Info, Loader2, Upload, PartyPopper, Trash2 } from 'lucide-react'
 import { Button } from '../ui';
 import { services, products } from '../../data/paintData';
 import { getFormEndpoint } from '../../utils/env';
+import { sendToPrivyr } from '../../utils/privyr';
 
 export function ServiceBookingForm() {
   const navigate = useNavigate();
@@ -125,6 +126,15 @@ export function ServiceBookingForm() {
 
       if (res.ok) {
         setSubmitStatus('success');
+        const servicesSummary = formData.selectedServices.join(', ');
+        const paintsSummary = formData.supplyPaint === 'No' ? formData.preferredPaints.join(', ') : 'Customer Supplies Own Paint';
+        sendToPrivyr({
+          client_name: formData.fullName,
+          phone_number: formData.phone,
+          email_address: formData.email,
+          additional_client_details: `WhatsApp: ${formData.whatsapp}\nProperty: ${formData.propertyAddress}\nType: ${formData.propertyType}\nServices: ${servicesSummary}\nSurface: ${formData.surfaceArea} sqm\nRooms: ${formData.roomsFloors}\nWall Condition: ${formData.wallCondition}\nPaints: ${paintsSummary}\nStart: ${formData.startDate}\nDuration: ${formData.durationEstimate}\nBudget: ${formData.budgetRange}\nNotes: ${formData.notes}`,
+          lead_source: 'Cilok Paint - Service Booking Form'
+        });
       } else {
         setSubmitStatus('error');
       }
@@ -140,12 +150,12 @@ export function ServiceBookingForm() {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-3xl p-8 md:p-12 border border-brand-muted shadow-2xl text-center max-w-2xl mx-auto my-12"
+        className="bg-zinc-950 rounded-2xl p-8 md:p-12 border border-zinc-800/80 shadow-2xl text-center max-w-2xl mx-auto my-12"
       >
         <div className="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary">
           <PartyPopper className="w-10 h-10 text-brand-accent animate-bounce" />
         </div>
-        <h3 className="font-display font-bold text-3xl text-brand-dark mb-4">Service Booking Secured!</h3>
+        <h3 className="font-display font-bold text-3xl text-white mb-4">Service Booking Secured!</h3>
         <p className="text-text-soft text-base md:text-lg leading-relaxed mb-8">
           Your request to book our application specialists has been received. Our chief sites engineer will review your dimensions and photos, and call you shortly to confirm the scheduled site visit date. Get ready to redefine your walls!
         </p>
@@ -172,16 +182,16 @@ export function ServiceBookingForm() {
   const containsPremium = formData.selectedServices.includes('crackos-effect') || formData.selectedServices.includes('ottochinto');
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 md:p-10 border border-brand-muted shadow-2xl space-y-8 max-w-4xl mx-auto">
+    <form onSubmit={handleSubmit} className="bg-zinc-950 rounded-2xl p-6 md:p-10 border border-zinc-800/80 shadow-2xl space-y-8 max-w-4xl mx-auto">
       
       {/* SECTION 1: Personal Coordinates */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           1. Customer Identity & Reach
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Full Name *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Full Name *</label>
             <input 
               type="text" 
               name="fullName"
@@ -193,7 +203,7 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Email Address *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Email Address *</label>
             <input 
               type="email" 
               name="email"
@@ -205,7 +215,7 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Phone Number *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Phone Number *</label>
             <input 
               type="tel" 
               name="phone"
@@ -217,7 +227,7 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">WhatsApp Number</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">WhatsApp Number</label>
             <input 
               type="tel" 
               name="whatsapp"
@@ -232,18 +242,18 @@ export function ServiceBookingForm() {
 
       {/* SECTION 2: Property coordinates */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           2. Building Site Parameters
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Property Architecture Type *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Property Architecture Type *</label>
             <select
               name="propertyType"
               required
               value={formData.propertyType}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Residential">Residential (Villa, Duplex, Apartment)</option>
               <option value="Commercial">Commercial Office Complex</option>
@@ -253,12 +263,12 @@ export function ServiceBookingForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Current Wall Condition</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Current Wall Condition</label>
             <select
               name="wallCondition"
               value={formData.wallCondition}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="New Build">New Build (Fresh plaster, bare bricking)</option>
               <option value="Repaint">Requires Repainting / Facelift</option>
@@ -267,7 +277,7 @@ export function ServiceBookingForm() {
             </select>
           </div>
           <div className="md:col-span-2">
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Complete Site Address *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Complete Site Address *</label>
             <textarea 
               name="propertyAddress"
               required
@@ -283,7 +293,7 @@ export function ServiceBookingForm() {
 
       {/* SECTION 3: Services selection */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-1 pb-2">
+        <h3 className="text-xl font-display font-medium text-white mb-1 pb-2">
           3. Select Cohesive Finishing Services
         </h3>
         <p className="text-xs text-text-soft mb-4">Check all operations you wish our crews to execute on your premises:</p>
@@ -309,7 +319,7 @@ export function ServiceBookingForm() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold text-sm text-brand-dark">{serv.name}</h4>
+                    <h4 className="font-semibold text-sm text-white">{serv.name}</h4>
                     {isPremium && (
                       <span className="text-[9px] uppercase font-bold tracking-widest bg-brand-accent/20 text-brand-accent px-1.5 py-0.5 rounded">Luxury Accent</span>
                     )}
@@ -329,7 +339,7 @@ export function ServiceBookingForm() {
           </div>
         )}
         {containsPremium && (
-          <div className="bg-brand-accent/10 border border-brand-accent/25 text-brand-dark text-xs font-semibold p-4 rounded-xl mt-4 flex items-center gap-2">
+          <div className="bg-brand-accent/10 border border-brand-accent/25 text-black text-xs font-semibold p-4 rounded-xl mt-4 flex items-center gap-2">
             <Info className="w-4 h-4 text-brand-accent shrink-0" />
             <span>Luxury Finishes: Shimmer effects are premium-grade applications hand-layered by our specialized artisan decorators.</span>
           </div>
@@ -338,17 +348,17 @@ export function ServiceBookingForm() {
 
       {/* SECTION 4: Paint Supply */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           4. Material & Paint Supply Plan
         </h3>
         <div className="space-y-4">
           <div className="bg-brand-surface p-4 rounded-2xl border border-brand-muted/70 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h4 className="font-semibold text-sm text-brand-dark">Do you already supply the paint?</h4>
+              <h4 className="font-semibold text-sm text-white">Do you already supply the paint?</h4>
               <p className="text-xs text-text-soft">Or should Cilok formulate, mix, deliver, and supply everything for the site?</p>
             </div>
             <div className="flex items-center gap-6">
-              <label className="flex items-center gap-2 font-bold text-xs text-brand-dark select-none cursor-pointer">
+              <label className="flex items-center gap-2 font-bold text-xs text-white select-none cursor-pointer">
                 <input 
                   type="radio" 
                   name="supplyPaint" 
@@ -359,7 +369,7 @@ export function ServiceBookingForm() {
                 />
                 Yes, I supply
               </label>
-              <label className="flex items-center gap-2 font-bold text-xs text-brand-dark select-none cursor-pointer">
+              <label className="flex items-center gap-2 font-bold text-xs text-white select-none cursor-pointer">
                 <input 
                   type="radio" 
                   name="supplyPaint" 
@@ -391,7 +401,7 @@ export function ServiceBookingForm() {
                       <label 
                         key={p.slug}
                         className={`p-3 rounded-xl border text-center cursor-pointer select-none ${
-                          isChecked ? 'border-brand-primary bg-white text-brand-primary font-bold' : 'border-brand-muted font-medium text-xs text-text-soft hover:border-brand-primary/40'
+                          isChecked ? 'border-brand-primary bg-zinc-800 text-brand-primary font-bold' : 'border-brand-muted font-medium text-xs text-text-soft hover:border-brand-primary/40'
                         }`}
                       >
                         <input 
@@ -413,12 +423,12 @@ export function ServiceBookingForm() {
 
       {/* SECTION 5: Timing and Budget */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           5. Schedule & Estimated Budget
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5 font-sans">Wall Area Dimensions (sqm Estimate)</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5 font-sans">Wall Area Dimensions (sqm Estimate)</label>
             <input 
               type="number" 
               name="surfaceArea"
@@ -429,7 +439,7 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5 font-sans font-semibold">Total Rooms / Floors</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5 font-sans font-semibold">Total Rooms / Floors</label>
             <input 
               type="text" 
               name="roomsFloors"
@@ -440,7 +450,7 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">When would you like our crews to start? *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">When would you like our crews to start? *</label>
             <input 
               type="date" 
               name="startDate"
@@ -453,12 +463,12 @@ export function ServiceBookingForm() {
             <span className="text-[10px] text-text-soft italic mt-1 block">Requires at least 5 days from today for logistical crew layouts.</span>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Project Duration Target</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Project Duration Target</label>
             <select
               name="durationEstimate"
               value={formData.durationEstimate}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="1-3 days">Quick facelift (1 to 3 Days)</option>
               <option value="1 week">Standard house (1 Week)</option>
@@ -468,12 +478,12 @@ export function ServiceBookingForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5 font-semibold">Estimated Booking Budget</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5 font-semibold">Estimated Booking Budget</label>
             <select
               name="budgetRange"
               value={formData.budgetRange}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="To be discussed">Choose options... (Will discuss inside quotation)</option>
               <option value="Under 200k">Under ₦200,000</option>
@@ -487,7 +497,7 @@ export function ServiceBookingForm() {
 
       {/* SECTION 6: File Upload spaces */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-1 pb-2">
+        <h3 className="text-xl font-display font-medium text-white mb-1 pb-2">
           6. Upload Building Space Photos (Highly Recommended)
         </h3>
         <p className="text-xs text-text-soft mb-4">Sharing photos allows us to formulate the right moisture and sealer profiles early.</p>
@@ -515,7 +525,7 @@ export function ServiceBookingForm() {
             className="hidden" 
           />
           <Upload className="w-8 h-8 text-brand-primary/80 mb-3 animate-pulse" />
-          <p className="font-semibold text-sm text-brand-dark mb-1">Drag and drop photos here, or click to browse</p>
+          <p className="font-semibold text-sm text-white mb-1">Drag and drop photos here, or click to browse</p>
           <p className="text-xs text-text-soft">Supports JPGS/PNGS, max 5 images, up to 5MB each.</p>
         </div>
 
@@ -534,7 +544,7 @@ export function ServiceBookingForm() {
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-white/90 text-[10px] p-1 font-semibold text-brand-dark truncate">
+                <div className="absolute bottom-0 left-0 right-0 bg-zinc-900/90 text-[10px] p-1 font-semibold text-white truncate">
                   {file.name}
                 </div>
               </div>
@@ -545,12 +555,12 @@ export function ServiceBookingForm() {
 
       {/* SECTION 7: Notes and referrals */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           7. Additional Notes
         </h3>
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Special Instructions / Project Specific Details</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Special Instructions / Project Specific Details</label>
             <textarea 
               name="notes"
               rows={3}
@@ -561,12 +571,12 @@ export function ServiceBookingForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">How did you hear about us?</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">How did you hear about us?</label>
             <select
               name="referral"
               value={formData.referral}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Google">Google / Web Search</option>
               <option value="Referral">Contractor / Painter Recommendation</option>

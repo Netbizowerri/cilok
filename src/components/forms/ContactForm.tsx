@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Mail, Phone, Loader2, Send } from 'lucide-react';
 import { Button } from '../ui';
 import { getFormEndpoint } from '../../utils/env';
+import { sendToPrivyr } from '../../utils/privyr';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,6 +36,13 @@ export function ContactForm() {
       });
       if (response.ok) {
         setSuccess(true);
+        sendToPrivyr({
+          client_name: formData.name,
+          phone_number: formData.phone,
+          email_address: formData.email,
+          additional_client_details: `Subject: ${formData.subject}\nMessage: ${formData.message}`,
+          lead_source: 'Cilok Paint - Contact Form'
+        });
       } else {
         setErrorCode(true);
       }
@@ -49,7 +57,7 @@ export function ContactForm() {
     return (
       <div className="bg-brand-secondary/30 border border-brand-muted rounded-2.5xl p-8 text-center max-w-lg mx-auto">
         <Mail className="w-12 h-12 text-brand-primary mx-auto mb-4 animate-bounce" />
-        <h4 className="font-display font-bold text-xl text-brand-dark mb-2">Message Dispatched!</h4>
+        <h4 className="font-display font-bold text-xl text-white mb-2">Message Dispatched!</h4>
         <p className="text-sm text-text-soft leading-relaxed mb-6">
           Thank you for messaging Cilok Paint. We have securely delivered your inquiry to our administration team. We usually respond within 2-3 hours on business days to all inquiries.
         </p>
@@ -61,9 +69,9 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-2.5xl border border-brand-muted shadow-xl space-y-5">
+    <form onSubmit={handleSubmit} className="bg-zinc-950 p-6 md:p-8 rounded-2xl border border-zinc-800/80 shadow-xl space-y-5">
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Your Name *</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Your Name *</label>
         <input 
           type="text" 
           name="name"
@@ -77,7 +85,7 @@ export function ContactForm() {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Phone Number *</label>
+          <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Phone Number *</label>
           <input 
             type="tel" 
             name="phone"
@@ -89,7 +97,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Email *</label>
+          <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Email *</label>
           <input 
             type="email" 
             name="email"
@@ -103,13 +111,13 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Inquiry Subject *</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Inquiry Subject *</label>
         <select
           name="subject"
           required
           value={formData.subject}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
         >
           <option value="General Inquiry">General Product Inquiry</option>
           <option value="Distributorship">Joining the Distributor Network</option>
@@ -119,7 +127,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Your Message *</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Your Message *</label>
         <textarea 
           name="message"
           required

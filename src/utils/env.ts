@@ -18,3 +18,11 @@ export function getFormEndpoint(name: string, fallback: string): string {
   if (!value) return fallback;
   return normalizeFormspreeUrl(value);
 }
+
+export function getPrivyrWebhookUrl(): string {
+  return getEnv('VITE_PRIVYR_WEBHOOK_URL', '');
+}
+
+export function getPrivyrToken(): string {
+  return getEnv('VITE_PRIVYR_TOKEN', '');
+}

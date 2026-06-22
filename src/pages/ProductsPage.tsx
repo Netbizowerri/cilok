@@ -68,7 +68,7 @@ export function ProductsPage({ onOpenConsultation }: ProductsProps) {
                     className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                       selectedTab === tab 
                         ? 'bg-brand-primary text-black shadow-md' 
-                        : 'bg-white text-brand-dark border border-brand-muted hover:border-brand-primary/55'
+                        : 'bg-white text-black border border-brand-muted hover:border-brand-primary/55'
                     }`}
                   >
                     {tab === 'All' ? 'All Products' : tab === 'Paints' ? 'Paints & Emulsions' : tab === 'Putty' ? 'Putties & Fillers' : 'Specialty POP'}
@@ -87,29 +87,29 @@ export function ProductsPage({ onOpenConsultation }: ProductsProps) {
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.25 }}
                       key={prod.slug}
-                      className="bg-white rounded-3xl p-6 border border-brand-muted shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                      className="bg-zinc-950 rounded-2xl p-6 border border-zinc-800/80 hover:border-brand-primary/40 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-1 mb-4">
-                          <span className="text-[10px] uppercase font-extrabold text-brand-accent tracking-widest block bg-brand-accent/15 px-2.5 py-1 rounded">
+                          <Badge variant={prod.category === 'prep' ? 'neutral' : 'primary'}>
+                            {prod.category.toUpperCase()}
+                          </Badge>
+                          <span className="text-[10px] font-extrabold tracking-wider bg-brand-accent/15 text-brand-accent px-2 py-0.5 rounded-full">
                             {prod.badge}
                           </span>
-                          <span className="text-xs text-text-soft font-bold capitalize select-none">
-                            {prod.category}
-                          </span>
                         </div>
-                        <h3 className="font-display font-semibold text-lg md:text-xl text-brand-dark mb-2">
+                        <h3 className="font-display font-bold text-xl text-white mb-2">
                           {prod.name}
                         </h3>
-                        <p className="text-xs md:text-sm text-text-soft line-clamp-3 mb-6">
+                        <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3 mb-6">
                           {prod.description}
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-brand-muted/20 flex items-center justify-between mt-auto">
+                      <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between mt-auto">
                         <Link 
                           to={`/products/${prod.slug}`}
-                          className="text-xs font-bold text-brand-primary inline-flex items-center hover:text-brand-accent group"
+                          className="text-xs font-bold text-brand-primary flex items-center gap-1 hover:text-brand-accent transition-colors group"
                         >
                           Technical Specs 
                           <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

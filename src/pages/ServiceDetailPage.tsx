@@ -77,7 +77,7 @@ export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {service.idealFor.map((useCase, i) => (
-                    <span key={i} className="bg-white border border-brand-muted p-3 rounded-xl text-xs md:text-sm text-text-base flex items-center gap-2.5 font-semibold">
+                    <span key={i} className="bg-zinc-900 border border-zinc-800 p-3 rounded-xl text-xs md:text-sm text-zinc-300 flex items-center gap-2.5 font-semibold">
                       <span className="w-2 h-2 rounded-full bg-brand-primary shrink-0" />
                       {useCase}
                     </span>
@@ -121,24 +121,25 @@ export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
       </section>
 
       {/* TECHNICAL TIMELINE PROCESS STEPS */}
-      <section className="py-20 bg-white border-b border-brand-muted">
+      <section className="py-20 bg-zinc-950 border-b border-zinc-800/40">
         <div className="max-w-4xl mx-auto px-5">
           <SectionHeading 
             eyebrow="Precision Timeline"
             heading="Our Professional Application Process"
             subheading="Cilok Paint crews follow strict site parameters on wall dust, humidity, and dry periods to guarantee flawless coatings."
+            inverse
           />
 
           <div className="relative border-l-2 border-brand-primary/10 ml-4 md:ml-6 space-y-10 pl-8">
             {service.processSteps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Node bubble */}
-                <div className="absolute -left-12 top-0.5 bg-brand-primary font-bold text-xs text-white rounded-full w-8 h-8 flex items-center justify-center border-4 border-white shadow-md">
+                <div className="absolute -left-12 top-0.5 bg-brand-primary font-bold text-xs text-white rounded-full w-8 h-8 flex items-center justify-center border-4 border-zinc-800 shadow-md">
                   {idx + 1}
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-lg text-brand-dark mb-1">{step.title}</h4>
-                  <p className="text-xs md:text-sm text-text-soft leading-relaxed">{step.desc}</p>
+                  <h4 className="font-display font-bold text-lg text-white mb-1">{step.title}</h4>
+                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -153,6 +154,7 @@ export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
             eyebrow="Associated Formulations"
             heading="Paint Products Formulated for This Service"
             subheading="We specifically recommend packing these products to yield cohesive weather defense and correct sheens on site."
+            inverse
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -162,12 +164,12 @@ export function ServiceDetailPage({ onOpenConsultation }: ServiceDetailProps) {
               return (
                 <div 
                   key={prodSlug}
-                  className="bg-white border border-brand-muted rounded-3xl p-6 shadow-sm flex flex-col justify-between"
-                >
-                  <div>
-                    <span className="text-[9px] uppercase font-bold tracking-wider text-brand-accent block mb-2">{p.badge}</span>
-                    <h3 className="font-display font-semibold text-lg text-brand-primary mb-2">{p.name}</h3>
-                    <p className="text-xs text-text-soft line-clamp-2 mt-1 mb-6 leading-relaxed">{p.description}</p>
+                  className="bg-zinc-950 border border-zinc-800/80 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <span className="text-[9px] uppercase font-bold tracking-wider text-brand-accent block mb-2">{p.badge}</span>
+                      <h3 className="font-display font-semibold text-lg text-white mb-2">{p.name}</h3>
+                      <p className="text-xs text-zinc-400 line-clamp-2 mt-1 mb-6 leading-relaxed">{p.description}</p>
                   </div>
                   <Link 
                     to={`/products/${prodSlug}`}

@@ -1,18 +1,107 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { products, services } from '../data/paintData';
 import { PageWrapper } from '../components/layout/PageWrapper';
-import { Badge, Button, FAQAccordion, SectionHeading } from '../components/ui';
-import { Check, ArrowRight, HelpCircle, ArrowLeft, Phone, Calendar } from 'lucide-react';
+import { Badge, Button, SectionHeading } from '../components/ui';
+import { Check, ArrowRight, ArrowLeft, Phone, Calendar } from 'lucide-react';
 
 interface ProductDetailProps {
   onOpenConsultation: () => void;
 }
 
+const paintColors = [
+  { name: 'Pure White', hex: '#FFFFFF' },
+  { name: 'Off White', hex: '#F5F5F0' },
+  { name: 'Cream', hex: '#FFFDD0' },
+  { name: 'Ivory', hex: '#FFFFF0' },
+  { name: 'Eggshell', hex: '#F0EAD6' },
+  { name: 'Alabaster', hex: '#EDEADE' },
+  { name: 'Snow White', hex: '#F6F6F6' },
+  { name: 'Beige', hex: '#F5F5DC' },
+  { name: 'Sand', hex: '#C2B280' },
+  { name: 'Tan', hex: '#D2B48C' },
+  { name: 'Khaki', hex: '#C3B091' },
+  { name: 'Camel', hex: '#C19A6B' },
+  { name: 'Oatmeal', hex: '#E6D5B8' },
+  { name: 'Biscuit', hex: '#F2E6D0' },
+  { name: 'Light Grey', hex: '#D3D3D3' },
+  { name: 'Warm Grey', hex: '#A9A9A9' },
+  { name: 'Cool Grey', hex: '#8C92AC' },
+  { name: 'Slate', hex: '#708090' },
+  { name: 'Charcoal', hex: '#36454F' },
+  { name: 'Stone', hex: '#928E85' },
+  { name: 'Silver', hex: '#C0C0C0' },
+  { name: 'Graphite', hex: '#474A51' },
+  { name: 'Pewter', hex: '#899499' },
+  { name: 'Ash', hex: '#B2BEB5' },
+  { name: 'Sky Blue', hex: '#87CEEB' },
+  { name: 'Baby Blue', hex: '#89CFF0' },
+  { name: 'Steel Blue', hex: '#4682B4' },
+  { name: 'Cobalt Blue', hex: '#0047AB' },
+  { name: 'Royal Blue', hex: '#4169E1' },
+  { name: 'Navy Blue', hex: '#000080' },
+  { name: 'Midnight Blue', hex: '#191970' },
+  { name: 'Ocean Blue', hex: '#0077BE' },
+  { name: 'Cornflower', hex: '#6495ED' },
+  { name: 'Ice Blue', hex: '#A5D7E8' },
+  { name: 'Indigo', hex: '#4B0082' },
+  { name: 'Teal', hex: '#008080' },
+  { name: 'Turquoise', hex: '#40E0D0' },
+  { name: 'Aqua', hex: '#00FFFF' },
+  { name: 'Sage Green', hex: '#BCB88A' },
+  { name: 'Olive Green', hex: '#556B2F' },
+  { name: 'Mint Green', hex: '#98FB98' },
+  { name: 'Emerald', hex: '#50C878' },
+  { name: 'Forest Green', hex: '#228B22' },
+  { name: 'Moss Green', hex: '#8A9A5B' },
+  { name: 'Seafoam', hex: '#9FE2BF' },
+  { name: 'Hunter Green', hex: '#355E3B' },
+  { name: 'Pine', hex: '#01796F' },
+  { name: 'Lime', hex: '#32CD32' },
+  { name: 'Chartreuse', hex: '#7FFF00' },
+  { name: 'Lavender', hex: '#E6E6FA' },
+  { name: 'Lilac', hex: '#C8A2C8' },
+  { name: 'Plum', hex: '#DDA0DD' },
+  { name: 'Mauve', hex: '#E0B0FF' },
+  { name: 'Orchid', hex: '#DA70D6' },
+  { name: 'Violet', hex: '#7F00FF' },
+  { name: 'Amethyst', hex: '#9966CC' },
+  { name: 'Eggplant', hex: '#614051' },
+  { name: 'Blush', hex: '#DE5D83' },
+  { name: 'Rose', hex: '#FF007F' },
+  { name: 'Dusty Rose', hex: '#C08080' },
+  { name: 'Coral', hex: '#FF7F50' },
+  { name: 'Salmon', hex: '#FA8072' },
+  { name: 'Brick Red', hex: '#CB4154' },
+  { name: 'Burgundy', hex: '#800020' },
+  { name: 'Crimson', hex: '#DC143C' },
+  { name: 'Magenta', hex: '#FF00FF' },
+  { name: 'Raspberry', hex: '#E30B5C' },
+  { name: 'Terracotta', hex: '#E2725B' },
+  { name: 'Rust', hex: '#B7410E' },
+  { name: 'Butter', hex: '#FFF4B0' },
+  { name: 'Mustard', hex: '#FFDB58' },
+  { name: 'Gold', hex: '#FFD700' },
+  { name: 'Peach', hex: '#FFE5B4' },
+  { name: 'Amber', hex: '#FFBF00' },
+  { name: 'Tangerine', hex: '#FF9966' },
+  { name: 'Sunflower', hex: '#FFDA03' },
+  { name: 'Apricot', hex: '#FBCEB1' },
+  { name: 'Chocolate', hex: '#7B3F00' },
+  { name: 'Espresso', hex: '#4E3524' },
+  { name: 'Mocha', hex: '#967969' },
+  { name: 'Walnut', hex: '#773F1A' },
+  { name: 'Caramel', hex: '#AA6F33' },
+  { name: 'Cinnamon', hex: '#D2691E' },
+  { name: 'Chestnut', hex: '#954535' },
+  { name: 'Taupe', hex: '#8B8589' },
+];
+
 export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
   const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const product = products.find(p => p.slug === slug);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
   // Fallback if product not found
   if (!product) {
@@ -139,8 +228,51 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
         </div>
       </section>
 
+      {/* COLOR PALETTE SECTION */}
+      <section className="py-20 bg-brand-surface border-b border-brand-muted/40">
+        <div className="max-w-4xl mx-auto px-5">
+          <SectionHeading
+            eyebrow="Color Palette"
+            heading="Explore Available Colors"
+            subheading="Browse our curated selection of premium paint colors. Click a swatch to preview the shade."
+            inverse/>
+
+          <div>
+            <div className="grid grid-cols-6 sm:grid-cols-9 gap-3">
+              {paintColors.map((c) => (
+                <button
+                  key={c.hex}
+                  onClick={() => setSelectedColor(c.hex)}
+                  className={`w-full aspect-square rounded-xl border-2 transition-all ${
+                    selectedColor === c.hex
+                      ? 'border-brand-primary ring-2 ring-brand-primary/30 scale-105'
+                      : 'border-zinc-700 hover:border-zinc-500'
+                  }`}
+                  style={{ backgroundColor: c.hex }}
+                  title={c.name}
+                />
+              ))}
+            </div>
+            {selectedColor && (
+              <div className="mt-6 flex items-center gap-4 p-4 rounded-2xl bg-zinc-900 border border-zinc-800">
+                <div
+                  className="w-12 h-12 rounded-xl border-2 border-zinc-700 shrink-0"
+                  style={{ backgroundColor: selectedColor }}
+                />
+                <div>
+                  <p className="text-sm font-bold text-white">
+                    {paintColors.find((c) => c.hex === selectedColor)?.name}
+                  </p>
+                  <p className="text-xs text-zinc-400">{selectedColor}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* APPLICATION STEPS SECTION */}
-      <section className="py-20 bg-white border-b border-brand-muted">
+      <section className="py-20 bg-zinc-950 border-b border-zinc-800/40">
         <div className="max-w-4xl mx-auto px-5">
           <SectionHeading 
             eyebrow="Application Instructions"
@@ -150,11 +282,11 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
 
           <div className="space-y-6">
             {product.howToApply.map((step, idx) => (
-              <div key={idx} className="flex gap-5 items-start p-5 rounded-2xl bg-brand-surface border border-brand-muted/75 shadow-sm">
+              <div key={idx} className="flex gap-5 items-start p-5 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-sm">
                 <span className="w-8 h-8 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold text-sm shrink-0">
                   {idx + 1}
                 </span>
-                <p className="text-sm md:text-base text-text-base leading-relaxed leading-relaxed font-semibold">
+                <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-semibold">
                   {step}
                 </p>
               </div>
@@ -163,20 +295,8 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
         </div>
       </section>
 
-      {/* FAQs ACCORDION */}
-      <section className="py-20 bg-brand-surface border-b border-brand-muted/40">
-        <div className="max-w-4xl mx-auto px-5">
-          <SectionHeading 
-            eyebrow="Technical FAQ"
-            heading="Frequently Asked Questions"
-            subheading="Clear, objective explanations on product washing, wall preparations, and chemical compositions."
-            inverse/>
-          <FAQAccordion items={product.faqs} />
-        </div>
-      </section>
-
       {/* RELATED PRODUCTS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <SectionHeading 
             eyebrow="Related Formulations"
@@ -188,11 +308,11 @@ export function ProductDetailPage({ onOpenConsultation }: ProductDetailProps) {
             {relatedProducts.map(p => (
               <div 
                 key={p.slug}
-                className="bg-brand-surface border border-brand-muted rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between"
+                className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="font-display font-bold text-lg text-brand-dark mb-2">{p.name}</h3>
-                  <p className="text-xs text-text-soft line-clamp-2 leading-relaxed mb-4">{p.description}</p>
+                  <h3 className="font-display font-bold text-lg text-white mb-2">{p.name}</h3>
+                  <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed mb-4">{p.description}</p>
                 </div>
                 <Link 
                   to={`/products/${p.slug}`}

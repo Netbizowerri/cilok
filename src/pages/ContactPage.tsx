@@ -75,7 +75,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] text-text-soft uppercase font-extrabold tracking-wider block mb-1">Anambra Plant Address</span>
-                    <address className="not-italic text-sm text-brand-dark font-medium leading-relaxed">
+                    <address className="not-italic text-sm text-black font-medium leading-relaxed">
                       25 Limca Road (Opp. Mr Biggs),<br />
                       Nkpor Old Road, Anambra State, Nigeria
                     </address>
@@ -115,12 +115,13 @@ export function ContactPage() {
       </section>
 
       {/* REGIONAL DISTRIBUTORS STATE BLOCK */}
-      <section className="py-20 bg-white border-b border-brand-muted">
+      <section className="py-20 bg-zinc-950 border-b border-zinc-800/40">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <SectionHeading 
             eyebrow="Depot Coordinates"
             heading="Authorized State Outlets"
             subheading="Need to pick up sealant buckets physically? Visit these authorized distributor coordinates or call store leads directly:"
+            inverse
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

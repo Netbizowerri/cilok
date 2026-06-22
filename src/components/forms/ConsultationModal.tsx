@@ -3,6 +3,7 @@ import { Loader2, Calendar } from 'lucide-react';
 import { Button, Modal } from '../ui';
 import { services, products } from '../../data/paintData';
 import { getFormEndpoint } from '../../utils/env';
+import { sendToPrivyr } from '../../utils/privyr';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -60,6 +61,13 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
       });
       if (response.ok) {
         setSuccess(true);
+        sendToPrivyr({
+          client_name: formData.name,
+          phone_number: formData.phone,
+          email_address: formData.whatsapp,
+          additional_client_details: `Location: ${formData.location}\nServices: ${formData.selectedServices.join(', ')}\nProducts: ${formData.selectedProducts.join(', ')}\nDescription: ${formData.description}`,
+          lead_source: 'Cilok Paint - Consultation Form'
+        });
       } else {
         setErrorSubmit(true);
       }
@@ -87,9 +95,9 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={handleCloseReset} title="Request a Free Consultation">
       {success ? (
-        <div className="text-center py-6">
+        <div className="text-center py-6 px-4 bg-zinc-950 rounded-2xl border border-zinc-800/80">
           <Calendar className="w-12 h-12 text-brand-primary mx-auto mb-4 animate-bounce" />
-          <h4 className="font-display font-bold text-xl text-brand-dark mb-2">Request Lodged!</h4>
+          <h4 className="font-display font-bold text-xl text-white mb-2">Request Lodged!</h4>
           <p className="text-sm text-text-soft leading-relaxed mb-6">
             Thank you! Your consultation request has been logged successfully. A Cilok Site Estimator will call you on the provided number within 2 business hours.
           </p>
@@ -98,13 +106,13 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4 max-h-[80vh] overflow-y-auto px-1">
+        <form onSubmit={handleSubmit} className="space-y-4 max-h-[80vh] overflow-y-auto px-1 bg-zinc-950 rounded-2xl border border-zinc-800/80 p-4">
           <p className="text-xs text-text-soft">
             Leave your contact details. We will reach out to discuss your structural plan, recommend paint formulas, and estimate costs free of charge.
           </p>
           
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-1">Full Name *</label>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-1">Full Name *</label>
             <input 
               type="text"
               name="name"
@@ -118,7 +126,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-1">Phone Number *</label>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-1">Phone Number *</label>
               <input 
                 type="tel"
                 name="phone"
@@ -130,7 +138,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
               />
             </div>
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-1">WhatsApp Number</label>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-1">WhatsApp Number</label>
               <input 
                 type="tel"
                 name="whatsapp"
@@ -143,7 +151,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-1">Property Location (City/State) *</label>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-1">Property Location (City/State) *</label>
             <input 
               type="text"
               name="location"
@@ -157,7 +165,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
           {/* New Section: Services List Selection */}
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-2">Services Needed</label>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-2">Services Needed</label>
             <div className="grid grid-cols-2 gap-2 max-h-36 overflow-y-auto p-1 border border-brand-muted/40 rounded-lg bg-black/[0.01]">
               {services.map(service => {
                 const isSelected = formData.selectedServices.includes(service.name);
@@ -168,7 +176,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                     onClick={() => handleServiceToggle(service.name)}
                     className={`flex items-center gap-2 p-2 rounded-lg border text-left transition-all ${
                       isSelected
-                        ? 'border-brand-primary bg-brand-primary/5 text-brand-dark'
+                        ? 'border-brand-primary bg-brand-primary/5 text-white'
                         : 'border-brand-muted/70 hover:border-brand-primary/50 text-text-soft bg-white'
                     }`}
                   >
@@ -186,7 +194,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
           {/* New Section: Products List Selection */}
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-2">Products of Interest</label>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-2">Products of Interest</label>
             <div className="grid grid-cols-2 gap-2 max-h-36 overflow-y-auto p-1 border border-brand-muted/40 rounded-lg bg-black/[0.01]">
               {products.map(product => {
                 const isSelected = formData.selectedProducts.includes(product.name);
@@ -197,7 +205,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                     onClick={() => handleProductToggle(product.name)}
                     className={`flex items-center gap-2 p-2 rounded-lg border text-left transition-all ${
                       isSelected
-                        ? 'border-brand-primary bg-brand-primary/5 text-brand-dark'
+                        ? 'border-brand-primary bg-brand-primary/5 text-white'
                         : 'border-brand-muted/70 hover:border-brand-primary/50 text-text-soft bg-white'
                     }`}
                   >
@@ -214,7 +222,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-1">Additional Project Details *</label>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-white mb-1">Additional Project Details *</label>
             <textarea 
               name="description"
               required

@@ -5,6 +5,7 @@ import { Check, Info, ArrowRight, Loader2, PartyPopper } from 'lucide-react';
 import { Button } from '../ui';
 import { products } from '../../data/paintData';
 import { getFormEndpoint } from '../../utils/env';
+import { sendToPrivyr } from '../../utils/privyr';
 
 export function ProductOrderForm() {
   const navigate = useNavigate();
@@ -113,6 +114,14 @@ export function ProductOrderForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        const productsSummary = formData.selectedProducts.map(slug => `${slug}: ${formData.quantities[slug]}`).join(', ');
+        sendToPrivyr({
+          client_name: formData.fullName,
+          phone_number: formData.phone,
+          email_address: formData.email,
+          additional_client_details: `WhatsApp: ${formData.whatsapp}\nState: ${formData.stateLocation}\nDelivery: ${formData.deliveryAddress}\nProducts: ${productsSummary}\nSurface: ${formData.surfaceArea} sqm\nFinish: ${formData.preferredFinish}\nDelivery Date: ${formData.deliveryDate}\nNotes: ${formData.specialNotes}`,
+          lead_source: 'Cilok Paint - Product Order Form'
+        });
       } else {
         setSubmitStatus('error');
       }
@@ -128,12 +137,12 @@ export function ProductOrderForm() {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-3xl p-8 md:p-12 border border-brand-muted shadow-2xl text-center max-w-2xl mx-auto my-12"
+        className="bg-zinc-950 rounded-2xl p-8 md:p-12 border border-zinc-800/80 shadow-2xl text-center max-w-2xl mx-auto my-12"
       >
         <div className="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary">
           <PartyPopper className="w-10 h-10 text-brand-accent animate-bounce" />
         </div>
-        <h3 className="font-display font-bold text-3xl text-brand-dark mb-4">Order Received!</h3>
+        <h3 className="font-display font-bold text-3xl text-white mb-4">Order Received!</h3>
         <p className="text-text-soft text-base md:text-lg leading-relaxed mb-8">
           Thank you for choosing Cilok Paint. We have successfully recorded your details. A dedicated product specialist from our factory or your nearest distributor zone will contact you within 24 hours to confirm shipping details and payment terms.
         </p>
@@ -157,16 +166,16 @@ export function ProductOrderForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 md:p-10 border border-brand-muted shadow-2xl space-y-8 max-w-4xl mx-auto">
+    <form onSubmit={handleSubmit} className="bg-zinc-950 rounded-2xl p-6 md:p-10 border border-zinc-800/80 shadow-2xl space-y-8 max-w-4xl mx-auto">
       
       {/* SECTION 1: Personal Coordinates */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           1. Contact Information
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Full Name *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Full Name *</label>
             <input 
               type="text" 
               name="fullName"
@@ -178,7 +187,7 @@ export function ProductOrderForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Email Address *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Email Address *</label>
             <input 
               type="email" 
               name="email"
@@ -190,7 +199,7 @@ export function ProductOrderForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Phone Number *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Phone Number *</label>
             <input 
               type="tel" 
               name="phone"
@@ -203,7 +212,7 @@ export function ProductOrderForm() {
           </div>
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark">WhatsApp Number</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-white">WhatsApp Number</label>
               <label className="flex items-center gap-1.5 text-xs text-brand-primary font-semibold select-none cursor-pointer">
                 <input 
                   type="checkbox" 
@@ -229,18 +238,18 @@ export function ProductOrderForm() {
 
       {/* SECTION 2: Destination Coordinate */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           2. Shipping & Delivery
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">State of Delivery *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">State of Delivery *</label>
             <select
               name="stateLocation"
               required
               value={formData.stateLocation}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="">Select State</option>
               {statesOfNigeria.map(st => (
@@ -249,12 +258,12 @@ export function ProductOrderForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Nearest Distributor Zone</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Nearest Distributor Zone</label>
             <select
               name="nearestDistributor"
               value={formData.nearestDistributor}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Factory Direct">Factory Direct (Nkpor-Onitsha)</option>
               <option value="Awka">Awka Distributor Outlet</option>
@@ -264,7 +273,7 @@ export function ProductOrderForm() {
             </select>
           </div>
           <div className="md:col-span-2">
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Detailed Delivery Address *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Detailed Delivery Address *</label>
             <textarea 
               name="deliveryAddress"
               required
@@ -280,7 +289,7 @@ export function ProductOrderForm() {
 
       {/* SECTION 3: Product Checkboxes and quantities */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-1 pb-2">
+        <h3 className="text-xl font-display font-medium text-white mb-1 pb-2">
           3. Paint & Material Selection
         </h3>
         <p className="text-xs text-text-soft mb-4">Please tick all paint options you require. Quantities can be adjusted below as they are checked.</p>
@@ -306,7 +315,7 @@ export function ProductOrderForm() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold text-sm text-brand-dark">{prod.name}</h4>
+                    <h4 className="font-semibold text-sm text-white">{prod.name}</h4>
                     <span className="text-[10px] bg-brand-muted/40 font-bold px-1.5 py-0.5 rounded text-brand-primary shrink-0">{prod.badge}</span>
                   </div>
                   <p className="text-xs text-text-soft mt-1 leading-normal line-clamp-2">{prod.description}</p>
@@ -337,9 +346,9 @@ export function ProductOrderForm() {
                       key={slug}
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      className="bg-white p-3 rounded-xl border border-brand-muted flex items-center justify-between gap-3"
+                      className="bg-zinc-900 p-3 rounded-xl border border-zinc-800 flex items-center justify-between gap-3"
                     >
-                      <span className="font-semibold text-xs text-brand-dark">{prod.name}</span>
+                      <span className="font-semibold text-xs text-white">{prod.name}</span>
                       <input 
                         type="text"
                         required
@@ -359,12 +368,12 @@ export function ProductOrderForm() {
 
       {/* SECTION 4: Application Parameters */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           4. Surface Details & Timing
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Surface Area Size (sqm Estimate)</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Surface Area Size (sqm Estimate)</label>
             <input 
               type="number" 
               name="surfaceArea"
@@ -375,7 +384,7 @@ export function ProductOrderForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Preferred Delivery Date *</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Preferred Delivery Date *</label>
             <input 
               type="date" 
               name="deliveryDate"
@@ -387,12 +396,12 @@ export function ProductOrderForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Preferred Paint Finish</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Preferred Paint Finish</label>
             <select
               name="preferredFinish"
               value={formData.preferredFinish}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Matt">Matt Finish (Flat)</option>
               <option value="Silk">Silk Finish (Lustrous Sheen)</option>
@@ -401,12 +410,12 @@ export function ProductOrderForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Wall Substrate Type</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Wall Substrate Type</label>
             <select
               name="surfaceType"
               value={formData.surfaceType}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Interior Wall">Interior Rooms and Salons</option>
               <option value="Exterior Wall">Exterior Facades & Columns</option>
@@ -417,11 +426,11 @@ export function ProductOrderForm() {
           
           <div className="md:col-span-2 bg-brand-surface p-4 rounded-2xl border border-brand-muted/70 flex items-center justify-between gap-4">
             <div>
-              <h4 className="font-semibold text-sm text-brand-dark">Do you require our professional crews for application?</h4>
+              <h4 className="font-semibold text-sm text-white">Do you require our professional crews for application?</h4>
               <p className="text-xs text-text-soft">Choosing yes guarantees our expert screeding and paint coatings on site.</p>
             </div>
             <div className="flex items-center gap-4">
-              <label className="flex items-center gap-2 font-bold text-xs text-brand-dark select-none cursor-pointer">
+              <label className="flex items-center gap-2 font-bold text-xs text-white select-none cursor-pointer">
                 <input 
                   type="radio" 
                   name="needApplication" 
@@ -432,7 +441,7 @@ export function ProductOrderForm() {
                 />
                 Yes
               </label>
-              <label className="flex items-center gap-2 font-bold text-xs text-brand-dark select-none cursor-pointer">
+              <label className="flex items-center gap-2 font-bold text-xs text-white select-none cursor-pointer">
                 <input 
                   type="radio" 
                   name="needApplication" 
@@ -457,12 +466,12 @@ export function ProductOrderForm() {
 
       {/* SECTION 5: Special details */}
       <div>
-        <h3 className="text-xl font-display font-medium text-brand-dark mb-4 pb-2 border-b border-brand-muted/40">
+        <h3 className="text-xl font-display font-medium text-white mb-4 pb-2 border-b border-brand-muted/40">
           5. Final Details
         </h3>
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">Special Requirements / Custom Color Requests</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">Special Requirements / Custom Color Requests</label>
             <textarea 
               name="specialNotes"
               rows={3}
@@ -473,12 +482,12 @@ export function ProductOrderForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-brand-dark mb-1.5">How did you hear about Cilok Paint?</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-white mb-1.5">How did you hear about Cilok Paint?</label>
             <select
               name="referral"
               value={formData.referral}
               onChange={handleTextChange}
-              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-brand-muted focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm bg-transparent"
             >
               <option value="Google">Google / Web Search</option>
               <option value="Referral">Contractor / Painter Recommendation</option>
