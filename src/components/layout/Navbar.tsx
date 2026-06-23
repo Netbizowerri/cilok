@@ -63,8 +63,8 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             {/* Home */}
             <NavLink 
               to="/" 
-              className={({ isActive }) => `text-[10px] uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
-                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-300'
+              className={({ isActive }) => `text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
+                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-800'
               }`}
             >
               Home
@@ -76,7 +76,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
               onMouseEnter={() => setActiveDropdown('products')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-mono font-semibold text-zinc-300 hover:text-brand-accent py-2 focus:outline-none">
+              <button className="flex items-center gap-1.5 text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold text-zinc-800 hover:text-brand-accent py-2 focus:outline-none">
                 <span>Products</span>
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
@@ -123,7 +123,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-mono font-semibold text-zinc-300 hover:text-brand-accent py-2 focus:outline-none">
+              <button className="flex items-center gap-1.5 text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold text-zinc-800 hover:text-brand-accent py-2 focus:outline-none">
                 <span>Services</span>
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
@@ -167,8 +167,8 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             {/* Projects */}
             <NavLink 
               to="/projects" 
-              className={({ isActive }) => `text-[10px] uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
-                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-300'
+              className={({ isActive }) => `text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
+                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-800'
               }`}
             >
               Projects
@@ -177,8 +177,8 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             {/* About */}
             <NavLink 
               to="/about" 
-              className={({ isActive }) => `text-[10px] uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
-                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-300'
+              className={({ isActive }) => `text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
+                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-800'
               }`}
             >
               About
@@ -187,8 +187,8 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             {/* Contact */}
             <NavLink 
               to="/contact" 
-              className={({ isActive }) => `text-[10px] uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
-                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-300'
+              className={({ isActive }) => `text-xs lg:text-sm uppercase tracking-[0.2em] font-mono font-semibold transition-colors hover:text-brand-accent ${
+                isActive ? 'text-brand-accent border-b border-brand-accent pb-1' : 'text-zinc-800'
               }`}
             >
               Contact
