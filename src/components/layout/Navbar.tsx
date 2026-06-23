@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Umbrella, Menu, X, ChevronDown, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from '../ui';
 import { products, services } from '../../data/paintData';
@@ -39,8 +39,8 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
-            ? 'glass-nav bg-white/90 shadow-lg border-b border-brand-muted/20 py-2 md:py-3' 
-            : 'bg-transparent pt-8 md:pt-5 pb-3.5 md:pb-5'
+            ? 'bg-[#F2F3FF]/95 shadow-lg border-b border-brand-muted/20 py-2 md:py-3' 
+            : 'bg-[#F2F3FF] pt-8 md:pt-5 pb-3.5 md:pb-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
@@ -49,16 +49,13 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
           <Link 
             id="nav-logo"
             to="/" 
-            className="flex items-center gap-1.5 md:gap-2 group focus:outline-none"
+            className="flex items-center group focus:outline-none"
           >
-            <div className="bg-brand-primary p-1.5 md:p-2 rounded-lg text-black shadow-md group-hover:rotate-12 transition-transform duration-300">
-              <Umbrella className="w-4 h-4 md:w-5 h-5" />
-            </div>
-            <span className={`font-display font-black text-base md:text-2xl leading-none tracking-tighter ${
-              isScrolled ? 'text-white' : 'text-white'
-            }`}>
-              CILOK PAINTS
-            </span>
+            <img 
+              src="https://i.ibb.co/QF2MmXQF/CILOK-17.jpg" 
+              alt="Cilok Paints Logo" 
+              className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300" 
+            />
           </Link>
 
           {/* Desktop Navigation Links */}

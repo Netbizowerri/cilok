@@ -78,8 +78,8 @@ export function ProductOrderPage() {
                   Contractors with custom logistics carriers can select "Factory Direct" pickup to receive material crates directly from our Nkpor-Onitsha loading bays.
                 </p>
                 <address className="not-italic text-xs font-bold text-black">
-                  25 Limca Road (Opp. Mr Biggs),<br />
-                  Nkpor Old Road, Anambra State
+                  49 Limca Road (Opp. Crunchies),<br />
+                  Nkpor, Anambra State
                 </address>
               </div>
 

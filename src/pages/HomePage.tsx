@@ -72,7 +72,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
               className="mb-2 md:mb-4 inline-flex"
             >
               <span className="bg-brand-accent/15 border border-brand-accent/30 text-brand-accent text-[10px] md:text-xs uppercase font-extrabold tracking-widest px-3 py-1 md:px-4 md:py-1.5 rounded-full inline-flex items-center gap-1.5 md:gap-2">
-                <Sparkles className="w-3 md:w-3.5 h-3 md:h-3.5" /> Established in Nigeria
+                <Sparkles className="w-3 md:w-3.5 h-3 md:h-3.5" /> Produced by Cilok Coating & Technical Services Ltd
               </span>
             </motion.div>
 
@@ -165,7 +165,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
           <SectionHeading 
             eyebrow="Our Product Collection"
             heading="PRODUCT RANGE/SERVICES"
-            subheading="Cilok paints have been developed and formulated to provide good quality coating with long term value, highly attractive finishes, wide range of aesthetically pleasing colours etc, that will withstand all tropical weather conditions of West Africa Sub region."
+            subheading="Cilok paints have been developed and formulated to provide good quality coating with long term value, highly attractive finishes, wide range of aesthetically pleasing colours etc, that will withstand all tropical weather conditions of West Africa Sub region. Made in Nigeria by Cilok Coating and Technical Services Ltd."
             inverse={false}
           />
 

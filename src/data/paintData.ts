@@ -533,6 +533,136 @@ export const projects: Project[] = [
     image: 'https://i.ibb.co/mLrc6pN/Ottocinto.jpg',
     description: "A breathtaking Ottochinto velvet-textured wall finish that replicates the luxurious feel of fine suede. Applied using specialized layered circular stippled strokes, the result is a warm, richly textured surface that shifts dramatically under light, perfect for executive interiors."
   },
+  {
+    id: 'hero-paint-display',
+    name: "Cilok Premium Paint Product Display",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: 'Nkpor, Anambra',
+    category: 'Commercial',
+    services: ['Product Showcase', 'Brand Display'],
+    image: 'https://i.ibb.co/k2yXg5sJ/Gemini-Generated-Image-2o63xb2o63xb2o63-1.png',
+    description: "Our signature product lineup showcasing the full range of Cilok Paint formulations — from Silk and Emulsion to Texcoat and specialty decorative finishes, each engineered for West African climate resilience."
+  },
+  {
+    id: 'hero-facade-transformation',
+    name: "CILOK-13 Painted Facade Transformation",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Commercial',
+    services: ['Paint Application', 'Weatherproof Shield', 'Exterior Coating'],
+    image: 'https://i.ibb.co/ZpMJ8vtQ/CILOK-13.jpg',
+    description: "A striking exterior wall transformation demonstrating the superior coverage and vibrant finish of Cilok Paint weatherproof formulations."
+  },
+  {
+    id: 'homepage-hero-building',
+    name: "CILOK-14 Residential Landmark Facade",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Paint Application', 'Silk Paint', 'Exterior Finish'],
+    image: 'https://i.ibb.co/j9XTWhxp/CILOK-14.jpg',
+    description: "An architectural masterpiece coated with Cilok Paint, showcasing how our premium formulations enhance modern residential structures with durable, luminous finishes."
+  },
+  {
+    id: 'screeding-process',
+    name: "Professional Wall Screeding in Progress",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Wall Screeding', 'Surface Preparation', 'Putty Application'],
+    image: 'https://i.ibb.co/Dffn1C0B/CILOK.jpg',
+    description: "Expert wall screeding in action using Cilok premium wall putty. This critical preparatory step ensures perfectly level surfaces for flawless topcoat application and long-lasting paint adhesion."
+  },
+  {
+    id: 'decorative-finishes-showcase',
+    name: "Decorative Wall Finishes Portfolio",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Decorative Finishes', 'Stucco', 'Crackled Effect', 'Pearl Effect'],
+    image: 'https://i.ibb.co/HT7jwzsd/Cilok-16.jpg',
+    description: "An elegant display of Cilok's decorative wall finish capabilities, from smooth silk sheens to richly textured stucco and artistic crackled effects."
+  },
+  {
+    id: 'product-range-showcase',
+    name: "Cilok Paint Product Range Overview",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Commercial',
+    services: ['Product Showcase', 'Paint Supply'],
+    image: 'https://i.ibb.co/4Z3sQTmP/CILOK-12.jpg',
+    description: "The complete Cilok Paint product catalog featuring our full spectrum of wall coating solutions including interior emulsions, exterior weatherproof shields, texture coatings, and specialty decorative finishes."
+  },
+  {
+    id: 'paint-application-service',
+    name: "Professional Paint Application Service",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Commercial',
+    services: ['Paint Application', 'Professional Coating', 'Interior Finish'],
+    image: 'https://i.ibb.co/272jcGgN/Cilok-16.jpg',
+    description: "Cilok's trained application specialists delivering precision paint application that ensures optimal film thickness, uniform coverage, and flawless finish on every project."
+  },
+  {
+    id: 'tyrolean-finish-showcase',
+    name: "Tyrolean Textured Exterior Finish",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Tyrolean Finish', 'Textured Coating', 'Exterior Render'],
+    image: 'https://i.ibb.co/xSw3k2rr/Untitled-design-1.jpg',
+    description: "A distinctive Tyrolean splattered texture finish applied to exterior walls, providing rugged weather defense and timeless architectural character popular across Nigerian developments."
+  },
+  {
+    id: 'stucco-artisan-finish',
+    name: "Artisan Stucco Wall Finish Application",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Stucco Finish', 'Artisan Plaster', 'Decorative Wall'],
+    image: 'https://i.ibb.co/spFWsWg0/CILOK-11.jpg',
+    description: "Hand-crafted Stucco finish by Cilok's skilled artisans, transforming ordinary walls into marble-like surfaces with rich tonal depth and sophisticated visual texture."
+  },
+  {
+    id: 'crackled-effect-showcase',
+    name: "Crackled Effect Decorative Wall Art",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Crackled Effect', 'Decorative Finishes', 'Antique Texture'],
+    image: 'https://i.ibb.co/zhfbwWzj/CILOK-1.jpg',
+    description: "An artistic Crackled Effect finish that evokes weathered heritage elegance, perfect for accent walls in boutique hotels, galleries, and premium residential interiors."
+  },
+  {
+    id: 'polystyrene-pop-installation',
+    name: "Polystyrene POP Ceiling Installation",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Polystyrene POP', 'Ceiling Design', 'Cornice Installation'],
+    image: 'https://i.ibb.co/8g6Z9JMD/Untitled-design-2.jpg',
+    description: "Precision installation of lightweight polystyrene POP cornices, ceiling roses, and decorative mouldings that resist humidity and structural settling better than traditional gypsum."
+  },
+  {
+    id: 'bucket-printing-service',
+    name: "Multi-Colour Bucket Screen Printing",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Commercial',
+    services: ['Screen Printing', 'Container Branding', 'Industrial Printing'],
+    image: 'https://i.ibb.co/pj2wD9rD/Whats-App-Image-2026-06-22-at-10-48-57-AM.jpg',
+    description: "Cilok's state-of-the-art multi-colour bucket screen printing service for plastic containers from 5 to 20 litres, delivering vibrant, durable prints for paint manufacturers, chemical companies, and industrial brands."
+  },
+  {
+    id: 'duplex-painted-with-cilok',
+    name: "Duplex Painted with Cilok",
+    client: 'Cilok Coating and Technical Services Ltd',
+    location: '',
+    category: 'Residential',
+    services: ['Paint Application', 'Exterior Finish', 'Silk Paint'],
+    image: 'https://i.ibb.co/zTY0G6GJ/Whats-App-Image-2026-06-15-at-12-58-37-PM.jpg',
+    description: "Duplex painted with cilok"
+  },
 ];
 
 export const testimonials = [

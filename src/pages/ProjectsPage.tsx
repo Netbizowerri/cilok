@@ -61,7 +61,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-brand-primary text-white shadow-md'
-                    : 'bg-white text-black border border-brand-muted hover:border-brand-primary/55'
+                    : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-primary/55'
                 }`}
               >
                 {cat === 'All' ? 'All Sites' : cat}
@@ -82,7 +82,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                   transition={{ duration: 0.25 }}
                   whileHover={{ y: -6 }}
                   onClick={() => setLightboxProject(proj)}
-                  className="bg-white rounded-3xl p-4 border border-brand-muted shadow-sm hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between"
+                  className="bg-zinc-950 rounded-3xl p-4 border border-zinc-800 shadow-sm hover:shadow-xl hover:border-brand-primary/40 transition-all cursor-pointer group flex flex-col justify-between"
                 >
                   <div>
                     {/* Image */}
@@ -110,11 +110,11 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                       </div>
                     )}
 
-                    <h3 className="font-display font-bold text-lg text-brand-dark mb-2 leading-snug group-hover:text-brand-accent transition-colors line-clamp-2">
+                    <h3 className="font-display font-bold text-lg text-white mb-2 leading-snug group-hover:text-brand-accent transition-colors line-clamp-2">
                       {proj.name}
                     </h3>
                     
-                    <p className="text-xs text-text-soft leading-relaxed line-clamp-3 mb-6">
+                    <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3 mb-6">
                       {proj.description}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                   {/* Badges footer */}
                   <div className="flex flex-wrap gap-1.5 pt-4 border-t border-brand-muted/20">
                     {proj.services.map((srv, i) => (
-                      <span key={i} className="text-[9px] uppercase font-bold bg-brand-secondary/40 text-brand-primary px-2 py-0.5 rounded border border-brand-muted/10">
+                      <span key={i} className="text-[9px] uppercase font-bold bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded border border-zinc-700">
                         {srv}
                       </span>
                     ))}
@@ -133,9 +133,9 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-16 bg-white border border-brand-muted rounded-3xl p-8 max-w-md mx-auto shadow-sm">
-              <span className="font-display font-bold text-lg text-brand-dark">No projects categorized under {selectedCategory} yet.</span>
-              <p className="text-xs text-text-soft mt-1">Please explore our Commercial or Religious project archives for extensive showcases.</p>
+            <div className="text-center py-16 bg-zinc-950 border border-zinc-800 rounded-3xl p-8 max-w-md mx-auto shadow-sm">
+              <span className="font-display font-bold text-lg text-white">No projects categorized under {selectedCategory} yet.</span>
+              <p className="text-xs text-zinc-400 mt-1">Please explore our Commercial or Religious project archives for extensive showcases.</p>
             </div>
           )}
 

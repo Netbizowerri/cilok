@@ -43,8 +43,12 @@ export function AboutPage() {
               Beauty Redefined ...bring your vision to life.
             </h2>
             <div className="text-sm md:text-base text-zinc-400 leading-relaxed space-y-4 font-light">
+              <p className="font-bold text-white">
+                <span className="block text-brand-accent text-xs uppercase tracking-widest mb-1">The Company Behind the Brand</span>
+                Cilok Coating and Technical Services Ltd is the Nigerian manufacturer and formulator of <strong className="text-white">Cilok Paint</strong> — every can, bucket, and batch is produced at our factory lines under strict quality control.
+              </p>
               <p>
-                Founded on the values of absolute structural durability and aesthetic visual balance, Cilok Coating and Technical Services Ltd has grown from a specialized technical paint workshop in Anambra State to a trusted national wall coating brand, producing Cilok Paint. 
+                Founded on the values of absolute structural durability and aesthetic visual balance, the company has grown from a specialized technical paint workshop in Anambra State to a trusted national wall coating brand.
               </p>
               <p>
                 We realized early on that standard international paints often fail under the punishing sun, sudden moisture drenching, and parching Harmattan dust storms characteristic of the West African climate. This led to our creation of climate-specific formulations with superior polyurethane binders and elastomeric properties.
@@ -127,8 +131,8 @@ export function AboutPage() {
               </p>
               <div className="text-xs font-bold text-white border-t border-zinc-800 pt-3">
                 <span className="block text-[10px] uppercase font-bold text-brand-accent tracking-wider mb-1">Physical Address</span>
-                25 Limca Road (Opp. Mr Biggs),<br />
-                Nkpor Old Road, Anambra State
+                49 Limca Road (Opp. Crunchies),<br />
+                Nkpor, Anambra State
               </div>
             </div>
           </div>

@@ -97,8 +97,8 @@ export function Footer() {
             <address className="not-italic">
               <strong className="text-white block mb-1 font-display">Cilok Coating and Technical Services Ltd</strong>
               <span className="text-[10px] text-brand-accent font-mono uppercase tracking-wider block mb-1">(Producers of Cilok Paint)</span>
-              25 Limca Road (Opp. Mr Biggs),<br />
-              Nkpor Old Road,<br />
+              49 Limca Road (Opp. Crunchies),<br />
+              Nkpor,<br />
               Anambra State, Nigeria
             </address>
           </div>

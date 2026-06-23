@@ -76,8 +76,8 @@ export function ContactPage() {
                   <div>
                     <span className="text-[10px] text-text-soft uppercase font-extrabold tracking-wider block mb-1">Anambra Plant Address</span>
                     <address className="not-italic text-sm text-black font-medium leading-relaxed">
-                      25 Limca Road (Opp. Mr Biggs),<br />
-                      Nkpor Old Road, Anambra State, Nigeria
+                      49 Limca Road (Opp. Crunchies),<br />
+                      Nkpor, Anambra State, Nigeria
                     </address>
                   </div>
                 </div>
