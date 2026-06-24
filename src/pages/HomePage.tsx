@@ -260,6 +260,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                     src="https://i.ibb.co/Dffn1C0B/CILOK.jpg" 
                     alt="Screeding tools detailing and finishing plaster wall smooth"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -274,6 +275,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                     src="https://i.ibb.co/HT7jwzsd/Cilok-16.jpg" 
                     alt="Decorative wall finishes showcase"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -408,6 +410,7 @@ export function HomePage({ onOpenConsultation }: HomeProps) {
                         src={proj.image} 
                         alt={proj.name} 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute top-3 left-3 bg-brand-primary text-black text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-md">

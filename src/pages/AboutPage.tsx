@@ -65,6 +65,7 @@ export function AboutPage() {
                 src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=600" 
                 alt="Architects consulting on wall colors using paint boards" 
                 className="w-full h-full object-cover"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
             </div>

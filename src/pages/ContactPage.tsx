@@ -1,8 +1,8 @@
 import React from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { ContactForm } from '../components/forms/ContactForm';
-import { SectionHeading, Button } from '../components/ui';
-import { Phone, Mail, MapPin, Building2, MessageCircle } from 'lucide-react';
+import { SectionHeading } from '../components/ui';
+import { Phone, Mail, Building2, MessageCircle } from 'lucide-react';
 
 export function ContactPage() {
   return (
@@ -107,71 +107,6 @@ export function ContactPage() {
             {/* Right Side (45%): Interactive Contact Form */}
             <div className="lg:col-span-6 order-1 lg:order-2">
               <ContactForm />
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* REGIONAL DISTRIBUTORS STATE BLOCK */}
-      <section className="py-20 bg-zinc-950 border-b border-zinc-800/40">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <SectionHeading 
-            eyebrow="Depot Coordinates"
-            heading="Authorized State Outlets"
-            subheading="Need to pick up sealant buckets physically? Visit these authorized distributor coordinates or call store leads directly:"
-            inverse
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            {/* Awka */}
-            <div className="bg-brand-surface p-6 rounded-3xl border border-brand-muted flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
-              <div>
-                <span className="text-[10px] uppercase font-extrabold tracking-wider bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded inline-block mb-3">Anambra Hub</span>
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">Awka Distributor</h4>
-                <p className="text-xs text-text-soft leading-relaxed mb-4">
-                  Serving Udoka Housing Estate, Agu-Awka development layouts, and capital ministries.
-                </p>
-              </div>
-              <a href="tel:08037046594" className="text-brand-accent text-xs font-bold block hover:underline">Ph: 08037046594</a>
-            </div>
-
-            {/* Enugu */}
-            <div className="bg-brand-surface p-6 rounded-3xl border border-brand-muted flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
-              <div>
-                <span className="text-[10px] uppercase font-extrabold tracking-wider bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded inline-block mb-3">Enugu Depot</span>
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">Enugu Distributor</h4>
-                <p className="text-xs text-text-soft leading-relaxed mb-4">
-                  Coordination of trans-shipments to Independence Layout, GRA, and Trans-Ekulu developers.
-                </p>
-              </div>
-              <a href="tel:08037046594" className="text-brand-accent text-xs font-bold block hover:underline">Ph: 08037046594</a>
-            </div>
-
-            {/* Port Harcourt */}
-            <div className="bg-brand-surface p-6 rounded-3xl border border-brand-muted flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
-              <div>
-                <span className="text-[10px] uppercase font-extrabold tracking-wider bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded inline-block mb-3">Rivers State Hub</span>
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">Port Harcourt Outlet</h4>
-                <p className="text-xs text-text-soft leading-relaxed mb-4">
-                  Distributing coastal weather-shield formulas to properties across high-humidity coastal sites.
-                </p>
-              </div>
-              <a href="tel:08039556430" className="text-brand-accent text-xs font-bold block hover:underline">Ph: 08039556430</a>
-            </div>
-
-            {/* Abuja */}
-            <div className="bg-brand-surface p-6 rounded-3xl border border-brand-muted flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
-              <div>
-                <span className="text-[10px] uppercase font-extrabold tracking-wider bg-brand-primary/10 text-brand-primary px-2.5 py-1 rounded inline-block mb-3">FCT Capital</span>
-                <h4 className="font-display font-bold text-base text-brand-dark mb-2">Abuja Coordinator</h4>
-                <p className="text-xs text-text-soft leading-relaxed mb-4">
-                  Supplying interior luxury, stucco, and Palace effects to Maitama, Asokoro, and Gwarinpa.
-                </p>
-              </div>
-              <a href="tel:08039556430" className="text-brand-accent text-xs font-bold block hover:underline">Ph: 08039556430</a>
             </div>
 
           </div>

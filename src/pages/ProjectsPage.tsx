@@ -91,6 +91,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                         src={proj.image} 
                         alt={proj.name} 
                         className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                        loading="lazy"
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute top-3 left-3 bg-brand-primary text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
@@ -165,6 +166,7 @@ export function ProjectsPage({ onOpenConsultation }: ProjectsProps) {
                   src={lightboxProject.image} 
                   alt={lightboxProject.name} 
                   className="w-full h-full object-cover" 
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               )}

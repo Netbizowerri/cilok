@@ -40,7 +40,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
             ? 'bg-[#F2F3FF]/95 shadow-lg border-b border-brand-muted/20 py-2 md:py-3' 
-            : 'bg-[#F2F3FF] pt-8 md:pt-5 pb-3.5 md:pb-5'
+            : 'bg-[#F2F3FF] pt-2 md:pt-5 pb-1 md:pb-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
@@ -54,7 +54,7 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
             <img 
               src="https://i.ibb.co/QF2MmXQF/CILOK-17.jpg" 
               alt="Cilok Paints Logo" 
-              className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300" 
+              className="h-11 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300" 
             />
           </Link>
 
@@ -202,15 +202,15 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
               variant="accent" 
               size="sm" 
               onClick={onOpenConsultation}
-              className="hidden md:inline-flex"
+              className="hidden lg:inline-flex"
             >
-              Get a Free Quote →
+              Get a Free Quote
             </Button>
 
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1.5 md:p-2 rounded-full bg-brand-secondary/30 text-brand-dark hover:bg-brand-accent/20 transition-all lg:hidden focus:outline-none"
+              className="p-1.5 md:p-2 rounded-full bg-brand-accent text-brand-dark hover:bg-brand-accent/80 transition-all lg:hidden focus:outline-none"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? (

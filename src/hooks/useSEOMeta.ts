@@ -84,12 +84,32 @@ export function useSEOMeta() {
 
     document.title = info.title;
 
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.setAttribute('name', 'description');
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute('content', info.description);
+    const setOrUpdateMeta = (attr: string, value: string, property = 'name') => {
+      const attrName = property === 'property' ? 'property' : 'name';
+      let el = document.querySelector(`meta[${attrName}="${attr}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attrName, attr);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', value);
+    };
+
+    const setOrUpdateLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', href);
+    };
+
+    setOrUpdateMeta('description', info.description);
+    setOrUpdateMeta('og:title', info.title, 'property');
+    setOrUpdateMeta('og:description', info.description, 'property');
+    setOrUpdateMeta('twitter:title', info.title);
+    setOrUpdateMeta('twitter:description', info.description);
+    setOrUpdateLink('canonical', `https://cilokpaint.com${path}`);
   }, [pathname]);
 }

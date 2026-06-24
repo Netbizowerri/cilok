@@ -82,6 +82,7 @@ export function BeforeAfterSlider({ before, after, beforeLabel = 'Before Treatme
         src={after} 
         alt="After Treatment" 
         className="absolute inset-0 w-full h-full object-cover" 
+        loading="lazy"
         referrerPolicy="no-referrer"
       />
       <div className="absolute top-4 right-4 bg-brand-primary/90 text-white text-xs md:text-sm md:px-3 md:py-1.5 px-2 py-1 rounded-full font-bold shadow-md z-1">
@@ -97,6 +98,7 @@ export function BeforeAfterSlider({ before, after, beforeLabel = 'Before Treatme
           src={before} 
           alt="Before Treatment" 
           className="absolute inset-0 w-full h-full object-cover" 
+          loading="lazy"
           referrerPolicy="no-referrer"
         />
         <div className="absolute top-4 left-4 bg-black/70 text-white text-xs md:text-sm md:px-3 md:py-1.5 px-2 py-1 rounded-full font-bold shadow-md z-1">
